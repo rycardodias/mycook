@@ -6,12 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="css/menu.css">
 
         <title>Laravel</title>
 </head>
 <body>
-@include('.includes.navbar')
     <div class="nav">
         <a  href="index.html" id="titulo">MyCook - Make life delicious</a>
         <!--<label for="toggle">&#9776;</label>

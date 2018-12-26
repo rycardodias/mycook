@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/sobre', function () {
+    return view('sobre');
+});
+Route::get('/contactos', function () {
+    return view('contactos');
+});
+
 Route::get('/createAccount', function () {
     return view('createAccount');
 });
