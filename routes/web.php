@@ -38,6 +38,10 @@ Route::get('/editarReceita', function () {
     return view('editarReceita');
 });
 
+Route::get('/myaccount', function () {
+    return view('myaccount');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

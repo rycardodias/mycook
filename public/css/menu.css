@@ -98,6 +98,18 @@ hgroup#redesSociais a:hover {
 
 }
 
+.corpo#register {
+    background-repeat: no-repeat;
+    background-size:cover; 
+    background-position: center; 
+}
+.corpo#register form{
+    background-color: aqua;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+}
+
 
 
 
