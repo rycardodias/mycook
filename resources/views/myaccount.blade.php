@@ -16,9 +16,8 @@
         <!--<label for="toggle">&#9776;</label>
         <input type="checkbox" id="toggle"/> -->
         <div class="menu">
-            <a id="pagAtual" href="myaccount">Receitas</a> 
+            <a id="pagAtual" href="receitas">Receitas</a> 
            <a href="">Sair</a>
-        
         </div>
     </div>
     <section class="corpo" id="sobre">

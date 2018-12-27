@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/sobre', function () {
     return view('sobre');
 });
+
 Route::get('/contactos', function () {
     return view('contactos');
 });
@@ -42,6 +43,14 @@ Route::get('/myaccount', function () {
     return view('myaccount');
 });
 
-Auth::routes();
+Route::get('/editarIngredientes', function () {
+    return view('editarIngredientes');
+});
 
+Route::get('/ingredientes', function () {
+    return view('ingredientes');
+});
+
+
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
