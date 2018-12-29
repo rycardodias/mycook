@@ -35,6 +35,14 @@ class CreateUsersTable extends Migration
             $table->foreign('atividadeFisica')->references('id')->on('atividade_fisicas');
 
         });
+
+        DB::table('users')->insert(array(
+            array(
+            'name' => 'Administrador',
+            'email' => 'admin@gmail.com',
+            'password' => '$2y$10$VjENQyiI0iVDFFpokJNyM.EDKJ5gQ5Md4uClFTVYa7CnkV8kt7Egu',
+            ),
+        ));
     }
 
     /**

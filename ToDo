@@ -1,0 +1,40 @@
+index.php
+    - recuperar pw
+    - criar conta
+    - css
+
+contactos
+    - criar texto
+    - css
+
+sobre
+    - criar texto
+    - css
+
+receitas
+    - criar filtros
+    - criar lista receitas
+    - css completo
+    - admin/user
+
+receitaDetalhada
+    - mostrar receita
+    - admin/user
+    - css
+
+editarReceita
+    - mostrar/criar/eliminar receita
+    - admin/user perms
+
+ingredientes
+    - criar filtros
+    - criar lista ingredientes
+    - css completo
+    - admin/user
+
+editaringredientes
+    - mostrar/criar/eliminar ingredientes
+    - admin/user perms
+
+myaccount
+    - criar tudo

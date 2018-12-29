@@ -10,6 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\DB;
+
+Route::get('/sexos', function() {
+    $sexo = DB::table('sexos')->get();
+    foreach($sexo as $s) {
+        echo "id: " . $s->id . " ";
+        echo "sexo: " . $s->sexo . "<br> ";
+    }
+});
 
 Route::get('/', function () {
     return view('index');
@@ -29,7 +38,7 @@ Route::get('/createAccount', function () {
 
 Route::get('/receitas', function () {
     return view('receitas');
-});
+})->middleware('auth');
 
 Route::get('/receitaDetalhada', function () {
     return view('receitaDetalhada');
@@ -54,3 +63,5 @@ Route::get('/ingredientes', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('mensagens', 'MensagensController');

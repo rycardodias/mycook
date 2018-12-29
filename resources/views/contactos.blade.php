@@ -22,6 +22,19 @@
         </div>
     </div>
     <section class="corpo" id="sobre">
+    <section class="texto" id="contactos">
+        <h1>Contactos</h1>
+        <p>Fale com a nossa equipa. Envie-nos uma mensagem.</p>
+    </section>
+    
+    <section id="info">
+        <p>Monserrate, Viana do Castelo</p>
+        <p>Telefone: +351 xxx xxx xxx</p>
+        <p>Email: xxxxxx@gmail.com</p>
+    </section>
+    <section id="formulario">
+        @include('posts.criarMensagens')
+    </section>
 
     </section>
     
