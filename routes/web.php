@@ -65,3 +65,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('mensagens', 'MensagensController');
+
+Route::resource('ingredientes', 'IngredientesController');

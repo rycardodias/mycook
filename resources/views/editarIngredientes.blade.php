@@ -22,29 +22,8 @@
         </div>
     </div>
     <section class="corpo" id="index">
-        <div class="editarReceita">
-            <p><input id="nome" maxlength="15" placeholder="Nome" required></p>
-            <p><input id="descricao" maxlength="30" placeholder="Descrição" required></p>
-            <p>
-                <select>
-                  <option value="1">UnidadeMedida</option>
-                </select>
-            </p>
-            <p>
-                <select>
-                  <option value="1">1 pessoa</option>
-                </select>
-            </p>
-             <p>
-                <select>
-                  <option value="1">Origem</option>
-                </select>
-            </p>
-            <p><button id="login">Editar</button></p>
-            <p><button id="login">Criar</button></p>
-            <p><button id="login">Eliminar</button></p>
+    @include('posts.criarIngredientes')
 
-        </div>
     </section>
     
 <footer id="rodape">
