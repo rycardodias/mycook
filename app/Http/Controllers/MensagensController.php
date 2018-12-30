@@ -63,8 +63,8 @@ class MensagensController extends Controller
      */
     public function show($id)
     {
-        // $mensagem = Mensagens::find($id);
-        // return view('posts.show')->with('mensagem', $mensagem);
+        $mensagem = Mensagens::find($id);
+        return view('posts.show')->with('mensagem', $mensagem);
     }
 
     /**
@@ -75,7 +75,8 @@ class MensagensController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mensagem = Mensagens::find($id);
+        return view('posts.edit')->with('mensagem', $mensagem);
     }
 
     /**

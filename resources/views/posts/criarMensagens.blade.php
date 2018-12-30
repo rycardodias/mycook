@@ -1,4 +1,4 @@
-@extends('layouts.formularioMensagens')
+@extends('layouts.app')
 
 @section('content')
     <h1>Enviar Mensagem</h1>

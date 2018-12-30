@@ -1,15 +1,3 @@
-index.php
-    - recuperar pw
-    - criar conta
-    - css
-
-contactos
-    - css
-
-sobre
-    - criar texto
-    - css
-
 receitas
     - criar filtros
     - criar lista receitas
@@ -37,3 +25,17 @@ editaringredientes
 
 myaccount
     - criar tudo
+
+// ------------- SECUNDARIO ----------
+
+index.php
+    - recuperar pw
+    - criar conta
+    - css
+
+contactos
+    - css
+
+sobre
+    - criar texto
+    - css

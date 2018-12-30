@@ -21,6 +21,24 @@ class CreateMensagensTable extends Migration
             $table->string('mensagem');
             $table->timestamps();
         });
+
+        DB::table('mensagens')->insert(array(
+            array(
+            'id' => '1',
+            'nome' => 'MensagemTeste1',
+            'email' => 'MensagemTeste1@gmail.com',
+            'assunto' => 'TesteN1',
+            'mensagem' => 'Mensagem de Teste 1'
+            ),
+            array(
+            'id' => '2',
+            'nome' => 'MensagemTeste2',
+            'email' => 'MensagemTeste2@gmail.com',
+            'assunto' => 'TesteN2',
+            'mensagem' => 'Mensagem de Teste 2'
+            ),
+           
+        ));
     }
 
     /**

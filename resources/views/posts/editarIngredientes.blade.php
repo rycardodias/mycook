@@ -1,7 +1,7 @@
 @extends('layouts.formularioMensagens')
 
 @section('content')
-    <h1>Editar Ingrediente</h1>
+    <h1>Editar Mensagem</h1>
     {!! Form::open(['action' => ['IngredientesController@update', $ingredientes->id], 'method' => 'POST']) !!}
         <div class="form-group">
             <p>{{Form::label('nome', 'Nome')}}
