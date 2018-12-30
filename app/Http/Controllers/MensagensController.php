@@ -87,7 +87,22 @@ class MensagensController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nome' => 'required',
+            'email' => 'required',
+            'assunto' => 'required',
+            'mensagem' => 'required'
+        ]);
+        
+        // Create Post
+        $mensagem = Mensagens::find($id);
+        $mensagem->nome = $request->input('nome');
+        $mensagem->email = $request->input('email');
+        $mensagem->assunto = $request->input('assunto');
+        $mensagem->mensagem = $request->input('mensagem');
+        $mensagem->save();
+
+        return redirect('contactos')->with('success', 'Mensagem enviada');
     }
 
     /**

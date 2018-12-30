@@ -21,19 +21,39 @@ class CreateOrigemAlimentosTable extends Migration
         DB::table('origem_alimentos')->insert(array(
             array(
             'id' => '1',
-            'origemAlimento' => 'Animal'
+            'origemAlimento' => 'Sem Restrições'
             ),
             array(
             'id' => '2',
-            'origemAlimento' => 'Vegetal'
+            'origemAlimento' => 'Animal'
             ),
             array(
             'id' => '3',
-            'origemAlimento' => 'Derivados animal'
+            'origemAlimento' => 'Vegetal'
             ),
             array(
             'id' => '4',
+            'origemAlimento' => 'Derivados animal'
+            ),
+            array(
+            'id' => '5',
             'origemAlimento' => 'Derivados vegetal'
+            ),
+            array(
+            'id' => '6',
+            'origemAlimento' => 'Bebida'
+            ),
+            array(
+            'id' => '7',
+            'origemAlimento' => 'Bebida Alcoolica'
+            ),
+            array(
+            'id' => '8',
+            'origemAlimento' => 'Bebida Lactia'
+            ),
+            array(
+            'id' => '9',
+            'origemAlimento' => 'Quantidade açucar elevado'
             ),
         ));
     }

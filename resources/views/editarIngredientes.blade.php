@@ -22,7 +22,9 @@
         </div>
     </div>
     <section class="corpo" id="index">
-    @include('posts.criarIngredientes')
+    <!-- @include('posts.criarIngredientes') -->
+    @include('posts.editarIngredientes')
+
 
     </section>
     

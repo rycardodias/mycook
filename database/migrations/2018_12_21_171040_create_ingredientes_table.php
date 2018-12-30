@@ -17,10 +17,8 @@ class CreateIngredientesTable extends Migration
            $table->increments('id');
             $table->string('nome');
             $table->string('descricao');
-                $table->unsignedInteger('idUnidadeMedida');
                 $table->unsignedInteger('idUtilizador');
                 $table->unsignedInteger('idOrigem');
-            $table->foreign('idUnidadeMedida')->references('id')->on('unidade_medidas');
             $table->foreign('idUtilizador')->references('id')->on('users');
             $table->foreign('idOrigem')->references('id')->on('origem_alimentos');
             $table->timestamps();

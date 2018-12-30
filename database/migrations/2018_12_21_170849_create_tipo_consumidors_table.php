@@ -31,6 +31,18 @@ class CreateTipoConsumidorsTable extends Migration
             'id' => '3',
             'tipoConsumidor' => 'Vegetariano c/derivados'
             ),
+            array(
+            'id' => '4',
+            'tipoConsumidor' => 'Intolerante a lactose'
+            ),
+            array(
+            'id' => '5',
+            'tipoConsumidor' => 'Intolerante ao alcool'
+            ),
+            array(
+            'id' => '6',
+            'tipoConsumidor' => 'Diabético'
+            ),
         ));
     }
 

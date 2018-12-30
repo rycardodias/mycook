@@ -16,8 +16,10 @@ class CreateIngredienteReceitasTable extends Migration
         Schema::create('ingrediente_receitas', function (Blueprint $table) {
                 $table->unsignedInteger('idReceita');
                 $table->unsignedInteger('idIngrediente');
+                $table->unsignedInteger('idUnidadeMedida');
             $table->foreign('idReceita')->references('id')->on('receitas');
             $table->foreign('idIngrediente')->references('id')->on('ingredientes');
+            $table->foreign('idUnidadeMedida')->references('id')->on('unidade_medidas');
             $table->integer('quantidade');
         });
     }

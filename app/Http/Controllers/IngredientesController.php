@@ -44,13 +44,13 @@ class IngredientesController extends Controller
         ]);
         
         // Create Post
-        $ingrediente = new Ingrediente;
-        $ingrediente->nome = $request->input('nome');
-        $ingrediente->descricao = $request->input('descricao');
-        $ingrediente->idUnidadeMedida = $request->input('idUnidadeMedida');
-        $ingrediente->idOrigem = $request->input('idOrigem');
-        $ingrediente->idUtilizador = $request->input('idUtilizador');
-        $ingrediente->save();
+        $ingredientes = new Ingrediente;
+        $ingredientes->nome = $request->input('nome');
+        $ingredientes->descricao = $request->input('descricao');
+        $ingredientes->idUnidadeMedida = $request->input('idUnidadeMedida');
+        $ingredientes->idOrigem = $request->input('idOrigem');
+        $ingredientes->idUtilizador = $request->input('idUtilizador');
+        $ingredientes->save();
 
         return redirect('editarIngredientes')->with('success', 'Ingrediente atualizado');
     }
@@ -94,12 +94,12 @@ class IngredientesController extends Controller
         ]);
         
         // Create Post
-        $ingrediente = Ingrediente::find($id);
-        $ingrediente->nome = $request->input('nome');
-        $ingrediente->descricao = $request->input('descricao');
-        $ingrediente->idUnidadeMedida = $request->input('idUnidadeMedida');
-        $ingrediente->idOrigem = $request->input('idOrigem');
-        $ingrediente->save();
+        $ingredientes = Ingrediente::find($id);
+        $ingredientes->nome = $request->input('nome');
+        $ingredientes->descricao = $request->input('descricao');
+        $ingredientes->idUnidadeMedida = $request->input('idUnidadeMedida');
+        $ingredientes->idOrigem = $request->input('idOrigem');
+        $ingredientes->save();
 
         return redirect('editarIngredientes')->with('success', 'Ingrediente atualizado');
     }
@@ -114,6 +114,6 @@ class IngredientesController extends Controller
     {
         $ingrediente = Ingrediente::find($id);
         $ingrediente->delete();
-        return redirect('/contactos')->with('sucess', 'Ingrediente atualizado');
+        return redirect('/contactos')->with('sucess', 'Ingrediente Eliminado');
     }
 }
