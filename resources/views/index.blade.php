@@ -12,14 +12,7 @@
 </head>
 <body>
     <div class="nav">
-        <a  href="/" id="titulo">MyCook - Make life delicious</a>
-        <!--<label for="toggle">&#9776;</label>
-        <input type="checkbox" id="toggle"/> -->
-        <div class="menu">
-            <a id="pagAtual" href="/">Início</a> 
-            <a href="sobre">Sobre</a>
-            <a href="contactos">Contactos</a>
-        </div>
+        @include('includes.navbar')
     </div>
     <section class="corpo" id="index">
         <div class="esquerda">
@@ -30,6 +23,7 @@
             </div>
         </div>
         <div class="direita">
+            @if(Auth::guest())
             <div class="login">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -65,17 +59,16 @@
                         @endif
                         @endif
                 </form>
+        <!-- INTRODUZIR CONDIÇOES -->
+                @else
+                <p> OLA </p>
+                @endif
             </div>
         </div>
     </section>
-    
+
 <footer id="rodape">
-    <p>Copyright 2018 - by MyCook </p><br>
-    <hgroup id="redesSociais">
-        <a href="#" target="_blank">Facebook</a>&nbsp;
-        <img align="middle" src="#">&nbsp;
-        <a href="#" target="_blank">Instagram</a>
-    </hgroup>
+    @include('includes.footer')
 </footer>    
 </body>
 </html>

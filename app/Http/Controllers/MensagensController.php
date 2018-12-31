@@ -26,7 +26,7 @@ class MensagensController extends Controller
      */
     public function create()
     {
-        return view('posts.criarMensagens');
+        return view('posts.mensagens.criarMensagens');
     }
 
     /**
@@ -64,7 +64,7 @@ class MensagensController extends Controller
     public function show($id)
     {
         $mensagem = Mensagens::find($id);
-        return view('posts.show')->with('mensagem', $mensagem);
+        return view('posts.mensagens.show')->with('mensagem', $mensagem);
     }
 
     /**
@@ -76,7 +76,7 @@ class MensagensController extends Controller
     public function edit($id)
     {
         $mensagem = Mensagens::find($id);
-        return view('posts.edit')->with('mensagem', $mensagem);
+        return view('posts.mensagens.edit')->with('mensagem', $mensagem);
     }
 
     /**
@@ -114,6 +114,8 @@ class MensagensController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mensagem = Mensagens::find($id);
+        $mensagem->delete();
+        return redirect('/mensagens')->with('sucess', 'Mensagem Eliminada');
     }
 }

@@ -23,6 +23,27 @@ class CreateIngredientesTable extends Migration
             $table->foreign('idOrigem')->references('id')->on('origem_alimentos');
             $table->timestamps();
         });
+
+        DB::table('ingredientes')->insert(array(
+            array(
+                'nome' => 'Batata',
+                'descricao' => 'Batata nova ou velha',
+                'idUtilizador' => '1',
+                'idOrigem' => '3',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'nome' => 'Bife de vaca',
+                'descricao' => 'Bife de vaca',
+                'idUtilizador' => '1',
+                'idOrigem' => '2',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+        ));
+
+
     }
 
     /**

@@ -21,4 +21,7 @@
         </div>
     </section>  
 </body>
+
+@include('includes.footer')
+
 </html>

@@ -4,38 +4,24 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Styles -->
-<!--        <link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+
         <link rel="stylesheet" href="css/menu.css">
 
         <title>MyCook</title>
 </head>
 <body>
     <div class="nav">
-        <a  href="/" id="titulo">MyCook - Make life delicious</a>
-        <!--<label for="toggle">&#9776;</label>
-        <input type="checkbox" id="toggle"/> -->
-        <div class="menu">
-            <a  href="/">Início</a> 
-            <a id="pagAtual" href="sobre">Sobre</a>
-            <a href="contactos">Contactos</a>
-        </div>
+        @include('includes.navbar')
     </div>
     <section class="corpo" id="sobre">
         <section class="texto" id="sobre">
             <h1>Sobre Nós</h1>
-            <p>Localizado no centro do Rabaçal, encontra-se estrategicamente posicionado na rota dos caminhantes dos trilhos de Santiago de Compostela e da peregrinação a Fátima, que não terão de se desviar da sua caminhada para pernoitar, bem como apreciar as carateristicas e lugares dessa localidade, onde poderão recuperar forças, aliviar o stress e até mesmo comprar um queijo tradicional.
-            Aprimorado de mão-de-obra especializada, oferece estadia, com refeição e convivio de forma saborosa, acolhedora e confortavel a um preço acessivel.</p>
+            <p></p>
         </section>
     </section>
     
 <footer id="rodape">
-    <p>Copyright 2018 - by MyCook </p><br>
-    <hgroup id="redesSociais">
-        <a href="#" target="_blank">Facebook</a>&nbsp;
-        <img align="middle" src="#">&nbsp;
-        <a href="#" target="_blank">Instagram</a>
-    </hgroup>
+    @include('includes.footer')
 </footer>    
 </body>
 </html>

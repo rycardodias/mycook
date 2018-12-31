@@ -23,6 +23,17 @@ class CreateReceitasTable extends Migration
             $table->foreign('idUtilizador')->references('id')->on('users');
             $table->timestamps();
         });
+        DB::table('receitas')->insert(array(
+            array(
+                'nome' => 'Bife grelhado com batatas fritas',
+                'resumo' => 'Bife grelhado com batatas fritas',
+                'nPassos' => '1ºFritar os bifes 2º Fritar as batatas',
+                'nPessoas' => '2',
+                'idUtilizador' => '1',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+        ));
     }
 
     /**
