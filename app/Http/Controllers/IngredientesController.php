@@ -15,7 +15,8 @@ class IngredientesController extends Controller
      */
     public function index()
     {
-        //
+        $ingrediente = ingrediente::all();
+        return view('posts.ingredientes.index')->with('ingredientes', $ingrediente);
     }
 
     /**
@@ -25,7 +26,7 @@ class IngredientesController extends Controller
      */
     public function create()
     {
-        return view('posts.criarIngredientes');
+        return view('posts.ingredientes.create');
     }
 
     /**
@@ -39,20 +40,19 @@ class IngredientesController extends Controller
         $this->validate($request, [
             'nome' => 'required',
             'descricao' => 'required',
-            'idUnidadeMedida' => 'required',
+            'idUtilizador' => 'required',
             'idOrigem' => 'required'
         ]);
         
         // Create Post
-        $ingredientes = new Ingrediente;
-        $ingredientes->nome = $request->input('nome');
-        $ingredientes->descricao = $request->input('descricao');
-        $ingredientes->idUnidadeMedida = $request->input('idUnidadeMedida');
-        $ingredientes->idOrigem = $request->input('idOrigem');
-        $ingredientes->idUtilizador = $request->input('idUtilizador');
-        $ingredientes->save();
+        $ingrediente = new Ingrediente;
+        $ingrediente->nome = $request->input('nome');
+        $ingrediente->descricao = $request->input('descricao');
+        $ingrediente->idUtilizador = $request->input('idUtilizador');
+        $ingrediente->idOrigem = $request->input('idOrigem');
+        $ingrediente->save();
 
-        return redirect('editarIngredientes')->with('success', 'Ingrediente atualizado');
+        return redirect('/ingredientes')->with('success', 'Ingrediente atualizado');
     }
 
     /**
@@ -63,7 +63,8 @@ class IngredientesController extends Controller
      */
     public function show($id)
     {
-        //
+        $ingrediente = Ingrediente::find($id);
+        return view('posts.ingredientes.show')->with('ingrediente', $ingrediente);
     }
 
     /**
@@ -74,7 +75,8 @@ class IngredientesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ingrediente = Ingrediente::find($id);
+        return view('posts.ingredientes.edit')->with('ingrediente', $ingrediente);
     }
 
     /**
@@ -89,19 +91,19 @@ class IngredientesController extends Controller
         $this->validate($request, [
             'nome' => 'required',
             'descricao' => 'required',
-            'idUnidadeMedida' => 'required',
+            'idUtilizador' => 'required',
             'idOrigem' => 'required'
         ]);
         
         // Create Post
-        $ingredientes = Ingrediente::find($id);
-        $ingredientes->nome = $request->input('nome');
-        $ingredientes->descricao = $request->input('descricao');
-        $ingredientes->idUnidadeMedida = $request->input('idUnidadeMedida');
-        $ingredientes->idOrigem = $request->input('idOrigem');
-        $ingredientes->save();
+        $ingrediente = Ingrediente::find($id);
+        $ingrediente->nome = $request->input('nome');
+        $ingrediente->descricao = $request->input('descricao');
+        $ingrediente->idUtilizador = $request->input('idUtilizador');
+        $ingrediente->idOrigem = $request->input('idOrigem');
+        $ingrediente->save();
 
-        return redirect('editarIngredientes')->with('success', 'Ingrediente atualizado');
+        return redirect('ingredientes')->with('success', 'Ingrediente atualizado');
     }
 
     /**
@@ -114,6 +116,6 @@ class IngredientesController extends Controller
     {
         $ingrediente = Ingrediente::find($id);
         $ingrediente->delete();
-        return redirect('/contactos')->with('sucess', 'Ingrediente Eliminado');
+        return redirect('ingredientes')->with('sucess', 'Ingrediente Eliminado');
     }
 }

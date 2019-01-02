@@ -15,8 +15,8 @@ class MensagensController extends Controller
      */
     public function index()
     {
-        // $mensagens = mensagens::all();
-        // return view('posts.index')->with('mensagens', $mensagens);
+        $mensagens = mensagens::all();
+        return view('posts.mensagens.index')->with('mensagens', $mensagens);
     }
 
     /**
@@ -26,7 +26,7 @@ class MensagensController extends Controller
      */
     public function create()
     {
-        return view('posts.mensagens.criarMensagens');
+        return view('posts.mensagens.create');
     }
 
     /**

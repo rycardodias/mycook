@@ -27,7 +27,7 @@
         <p>Email: xxxxxx@gmail.com</p>
     </section>
     <section id="formulario">
-        @include('posts.mensagens.criarMensagens')
+        @include('posts.mensagens.create')
     </section>
 
     </section>
