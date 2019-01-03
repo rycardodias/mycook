@@ -22,10 +22,7 @@
         </div>
     </div>
     <section class="corpo" id="index">
-    <!-- @include('posts.criarIngredientes') -->
-    @include('posts.editarIngredientes')
-
-
+        @include('posts.ingredientes.edit')
     </section>
     
 <footer id="rodape">
