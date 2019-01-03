@@ -22,18 +22,7 @@
     </div>
     <section class="corpo" id="editarReceita">
         <div class="editarReceita">
-            <p><input id="nome" maxlength="15" placeholder="Nome" required></p>
-            <p><input id="descricao" maxlength="30" placeholder="Descrição" required></p>
-            <p><input id="passos" maxlength="15" placeholder="Lista de Passos" required></p>
-            <p>
-                <select>
-                  <option value="1">1 pessoa</option>
-                  <option value="2">2 pessoas</option>
-                  <option value="3">3 pessoas</option>
-                  <option value="4">4 pessoas</option>
-                </select>
-            </p>
-            <p><button id="login">Registar</button></p>
+            @include('posts.receitas.edit')
         </div>
     </section>
     

@@ -24,27 +24,27 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/sobre', function () {
+Route::get('/Sobre', function () {
     return view('sobre');
 });
 
-Route::get('/contactos', function () {
+Route::get('/Contactos', function () {
     return view('contactos');
 });
 
-Route::get('/createAccount', function () {
+Route::get('/CreateAccount', function () {
     return view('createAccount');
 });
 
-Route::get('/receitas', function () {
+Route::get('/Receitas', function () {
     return view('receitas');
 })->middleware('auth');
 
-Route::get('/receitaDetalhada', function () {
+Route::get('/ReceitaDetalhada', function () {
     return view('receitaDetalhada');
 });
 
-Route::get('/editarReceita', function () {
+Route::get('/EditarReceita', function () {
     return view('editarReceita');
 });
 
@@ -67,3 +67,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('mensagens', 'MensagensController');
 
 Route::resource('ingredientes', 'IngredientesController');
+
+Route::resource('receitas', 'ReceitasController');

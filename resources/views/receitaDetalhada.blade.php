@@ -21,7 +21,7 @@
            <a href="sobre.html">Sair</a>
         </div>
     </div>
-    <section class="corpo" id="index">
+    <section class="corpo" id="receitaDetalhada">
         <div class="receita">
             <img src="#" >
             <h1>Texto</h1>

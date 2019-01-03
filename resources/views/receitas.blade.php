@@ -21,12 +21,12 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
         </div>
     </div>
-    <section class="corpo" id="index">
+    <section class="corpo" id="receitas">
         <div class="filter">
         
         </div>
         <div class="receitas">
-            
+            <!-- @include('posts.mensagens.create') -->
         </div>
     </section>
     

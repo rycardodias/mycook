@@ -1,23 +1,23 @@
-@extends('layouts.formularioIngredientes')
+@extends('layouts.app')
 
 @section('content')
-    <h1>Criar Ingrediente</h1>
-    {!! Form::open(['action' => 'IngredientesController@store', 'method' => 'POST']) !!}
+    <h1>Criar Receitas</h1>
+    {!! Form::open(['action' => 'ReceitasController@store', 'method' => 'POST']) !!}
         <div class="form-group">
             <p>{{Form::label('nome', 'Nome')}}
             <p>{{Form::text('nome', '', ['class' => 'form-control', 'placeholder' => 'Nome'])}}
         </div>
         <div class="form-group">
-            <p>{{Form::label('descricao', 'Descricao')}}
-            <p>{{Form::text('descricao', '', [ 'class' => 'form-control', 'placeholder' => 'Descricao'])}}
+            <p>{{Form::label('resumo', 'resumo')}}
+            <p>{{Form::text('resumo', '', [ 'class' => 'form-control', 'placeholder' => 'resumo'])}}
         </div>
         <div class="form-group">
-            <p>{{Form::label('idUnidadeMedida', 'idUnidadeMedida')}}
-            <p>{{Form::text('idUnidadeMedida', '', ['class' => 'form-control', 'placeholder' => 'idUnidadeMedida'])}}
+            <p>{{Form::label('nPassos', 'nPassos')}}
+            <p>{{Form::text('nPassos', '', ['class' => 'form-control', 'placeholder' => 'nPassos'])}}
         </div>
         <div class="form-group">
-            <p>{{Form::label('idOrigem', 'idOrigem')}}
-            <p>{{Form::text('idOrigem', '', ['class' => 'form-control', 'placeholder' => 'idOrigem'])}}
+            <p>{{Form::label('nPessoas', 'nPessoas')}}
+            <p>{{Form::text('nPessoas', '', ['class' => 'form-control', 'placeholder' => 'nPessoas'])}}
         </div>
         <div class="form-group">
             <p>{{Form::label('idUtilizador', 'idUtilizador')}}

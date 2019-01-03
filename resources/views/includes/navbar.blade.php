@@ -14,8 +14,8 @@
         <input type="checkbox" id="toggle"/> -->
         <div class="menu">
             <a id="pagAtual" href="/">Início</a> 
-            <a href="sobre">Sobre</a>
-            <a href="contactos">Contactos</a>
+            <a href="Sobre">Sobre</a>
+            <a href="Contactos">Contactos</a>
             @if(Auth::guest())
             @else
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Sair') }}</a>
