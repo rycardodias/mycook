@@ -26,7 +26,6 @@
         
         </div>
         <div class="receitas">
-            <!-- @include('posts.mensagens.create') -->
         </div>
     </section>
     

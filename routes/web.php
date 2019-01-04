@@ -37,28 +37,29 @@ Route::get('/CreateAccount', function () {
 });
 
 Route::get('/Receitas', function () {
+    $receita = DB::table('receitas')->get();
     return view('receitas');
 })->middleware('auth');
 
 Route::get('/ReceitaDetalhada', function () {
     return view('receitaDetalhada');
-});
+})->middleware('auth');
 
 Route::get('/EditarReceita', function () {
     return view('editarReceita');
-});
+})->middleware('auth');
 
 Route::get('/myaccount', function () {
     return view('myaccount');
-});
+})->middleware('auth');
 
 Route::get('/editarIngredientes', function () {
     return view('editarIngredientes');
-});
+})->middleware('auth');
 
 Route::get('/ingredientes', function () {
     return view('ingredientes');
-});
+})->middleware('auth');
 
 
 Auth::routes();
