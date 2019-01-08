@@ -1,7 +1,7 @@
+<div class="nav">
+        @include('includes.navbar')
+</div>
 
-@extends('layouts.app')
-
-@section('content')
     <h1>Criar Ingredientes</h1>
     {!! Form::open(['action' => 'IngredientesController@store', 'method' => 'POST']) !!}
         <div class="form-group">
@@ -23,4 +23,7 @@
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
 
     {!! Form::close() !!}
-@endsection
+
+    <footer id="rodape">
+    @include('includes.footer')
+</footer>  

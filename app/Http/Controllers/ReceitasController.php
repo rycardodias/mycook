@@ -16,7 +16,7 @@ class ReceitasController extends Controller
     public function index()
     {
         $receita = receita::all();
-        return view('posts.receitas.index')->with('receitas', $receita);
+        return view('receitas')->withReceitas( $receita);
     }
 
     /**
@@ -67,7 +67,7 @@ class ReceitasController extends Controller
     public function show($id)
     {
         $receita = receita::find($id);
-        return view('posts.receitas.show')->with('receita', $receita);
+        return view('posts.receitas.show')->withReceita($receita);
     }
 
     /**

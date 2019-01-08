@@ -11,28 +11,12 @@
         <title>Laravel</title>
 </head>
 <body>
-@include('.includes.navbar')
     <div class="nav">
-        <a  href="index.html" id="titulo">MyCook - Make life delicious</a>
-        <!--<label for="toggle">&#9776;</label>
-        <input type="checkbox" id="toggle"/> -->
-        <div class="menu">
-          <a id="pagAtual" href="index.html">Minha Conta</a> 
-           <a href="sobre.html">Sair</a>
-        </div>
+        @include('includes.navbar')
     </div>
-    <section class="corpo" id="receitaDetalhada">
-        <div class="receita">
-            <img src="#" >
-            <h1>Texto</h1>
-            <p>Descrição</p>
-        </div>
-        <div class="detalhes">
-            <h1>Receita Detalhada</h1>
-            <p>Textinho</p>
-            <h2>Passos</h2>
-            <p>passo a passo</p>
-        </div>
+        <section id="formulario">
+            @include('posts.receitas.show')
+        </section>
     </section>
     
 <footer id="rodape">

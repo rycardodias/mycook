@@ -1,6 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
+<div class="nav">
+        @include('includes.navbar')
+</div>
     <h1>Editar idOrigem</h1>
     {!! Form::open(['action' => ['IngredientesController@update', $ingrediente->id], 'method' => 'POST']) !!}
         <div class="form-group">
@@ -29,4 +29,7 @@
         {{Form::hidden('_method', 'DELETE')}}
         {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
     {!!Form::close()!!}
-@endsection
+    
+<footer id="rodape">
+    @include('includes.footer')
+</footer> 

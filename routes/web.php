@@ -37,7 +37,6 @@ Route::get('/CreateAccount', function () {
 });
 
 Route::get('/Receitas', function () {
-    $receita = DB::table('receitas')->get();
     return view('receitas');
 })->middleware('auth');
 
@@ -57,16 +56,16 @@ Route::get('/editarIngredientes', function () {
     return view('editarIngredientes');
 })->middleware('auth');
 
-Route::get('/ingredientes', function () {
-    return view('ingredientes');
-})->middleware('auth');
-
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('mensagens', 'MensagensController')->middleware('auth');
 
-Route::resource('mensagens', 'MensagensController');
 
-Route::resource('ingredientes', 'IngredientesController');
+Route::resource('receitas', 'ReceitasController')->middleware('auth');
 
-Route::resource('receitas', 'ReceitasController');
+Route::resource('ingredientes', 'IngredientesController')->middleware('auth');
+
+
+
+
