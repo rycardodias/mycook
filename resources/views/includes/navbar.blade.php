@@ -36,6 +36,7 @@ $variavel = 'http://127.0.0.1:8000'
 @endif
 
 
+
 @if(Request::url() === $variavel )
     @if(Auth::guest())
         <div class="nav">
@@ -57,7 +58,8 @@ $variavel = 'http://127.0.0.1:8000'
             </div>
         </div>
     @endif
-@else
+@endif
+@if(Request::url() === $variavel . '/ola' )
 <div class="nav">
     <a  href="/" id="titulo">Versão de TESTES</a>
 
