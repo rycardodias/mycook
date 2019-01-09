@@ -12,20 +12,15 @@
 </head>
 <body>
     <div class="nav">
-        <a  href="/" id="titulo">MyCook - Make life delicious</a>
-        <!--<label for="toggle">&#9776;</label>
-        <input type="checkbox" id="toggle"/> -->
-        <div class="menu">
-            <a id="pagAtual" href="receitas">Receitas</a> 
-           <a href="">Sair</a>
-        </div>
+        @include('includes.navbar')
     </div>
-    <section class="corpo" id="sobre">
-
+        <section id="formulario">
+            @include('posts.utilizadores.index')
+        </section>
     </section>
     
 <footer id="rodape">
-    @include('includes.footer') 
+    @include('includes.footer')
 </footer>    
 </body>
 </html>

@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
     <h1>Editar Utilizador</h1>
     {!! Form::open(['action' => ['UtilizadoresController@update', $utilizador->id], 'method' => 'POST']) !!}
         <div class="form-group">
@@ -45,4 +43,3 @@
         {{Form::hidden('_method', 'DELETE')}}
         {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
     {!!Form::close()!!}
-@endsection

@@ -1,3 +1,15 @@
+<style>
+.esquerdaa  {
+    width: 75%;
+    float: left;
+}
+
+.direitaa  s{
+    width: 25%;
+    float: right;
+}
+</style>
+<div class="esquerda">
 <h1>Lista de Receitas</h1> 
 @if(count($receitas)>0)
     @foreach($receitas as $receita)
@@ -9,3 +21,8 @@
 @else
     <p>Sem mensagens encontradas</p>
 @endif
+</div>
+<div class="direita">
+    ola
+</div>
+

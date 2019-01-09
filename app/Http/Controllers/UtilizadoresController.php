@@ -16,7 +16,8 @@ class UtilizadoresController extends Controller
     public function index()
     {
         $utilizador = user::all();
-        return view('posts.utilizadores.index')->with('utilizador', $utilizador);
+        return view('myaccount')->withUtilizador($utilizador);
+
     }
 
     /**
@@ -37,7 +38,25 @@ class UtilizadoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'tipoUtilizador' => 'required',
+            'estadoConta' => 'required'
+        ]);
+        
+        // Create Post
+        $utilizador = new user;
+        $utilizador->name = $request->input('name');
+        $utilizador->email = $request->input('email');
+        $utilizador->tipoUtilizador = $request->input('tipoUtilizador');
+        $utilizador->estadoConta = $request->input('estadoConta');
+        $utilizador->sexo = $request->input('sexo');
+        $utilizador->faixaEtaria = $request->input('faixaEtaria');
+        $utilizador->atividadeFisica = $request->input('atividadeFisica');
+        $utilizador->save();
+
+        return redirect('myaccount')->with('success', 'receita atualizado');
     }
 
     /**
@@ -48,7 +67,8 @@ class UtilizadoresController extends Controller
      */
     public function show($id)
     {
-        //
+        $utilizador = user::find($id);
+        return view('posts.utilizadores.show')->withUtilizador($utilizador);
     }
 
     /**
@@ -59,7 +79,8 @@ class UtilizadoresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $utilizador = user::find($id);
+        return view('posts.utilizadores.edit')->withUtilizador($utilizador);
     }
 
     /**
@@ -71,7 +92,25 @@ class UtilizadoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'tipoUtilizador' => 'required',
+            'estadoConta' => 'required'
+        ]);
+        
+        // Create Post
+        $utilizador = user::find($id);
+        $utilizador->name = $request->input('name');
+        $utilizador->email = $request->input('email');
+        $utilizador->tipoUtilizador = $request->input('tipoUtilizador');
+        $utilizador->estadoConta = $request->input('estadoConta');
+        $utilizador->sexo = $request->input('sexo');
+        $utilizador->faixaEtaria = $request->input('faixaEtaria');
+        $utilizador->atividadeFisica = $request->input('atividadeFisica');
+        $utilizador->save();
+
+        return redirect('myaccount')->with('success', 'receita atualizado');
     }
 
     /**
@@ -82,6 +121,8 @@ class UtilizadoresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $utilizador = user::find($id);
+        $utilizador->delete();
+        return redirect('/')->with('sucess', 'Utilizador Eliminado!');
     }
 }

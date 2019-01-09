@@ -28,9 +28,6 @@ Route::get('/CreateAccount', function () {
     return view('createAccount');
 });
 
-Route::get('/myaccount', function () {
-    return view('myaccount');
-})->middleware('auth');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -39,6 +36,9 @@ Route::resource('mensagens', 'MensagensController')->middleware('auth');
 Route::resource('receitas', 'ReceitasController')->middleware('auth');
 
 Route::resource('ingredientes', 'IngredientesController')->middleware('auth');
+
+Route::resource('myaccount', 'UtilizadoresController')->middleware('auth');
+
 
 
 
