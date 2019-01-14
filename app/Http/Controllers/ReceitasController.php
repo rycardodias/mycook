@@ -2,34 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\tipoConsumidor;
 use Illuminate\Http\Request;
 use App\receita;
 use DB;
 
 class ReceitasController extends Controller
 {
-
-    public function filter($tipoID)
-    {
-
-        $tipos = tipoConsumidor::all();
-
-        $query=
-            DB::table('receitas')
-                ->join('ingrediente_receitas', 'receitas.id', '=', 'ingrediente_receitas.idReceita')
-                ->join('origem_alimentos', 'ingrediente_receitas.idIngrediente', '=', 'origem_alimentos.id')
-                ->join('origem_tipos', 'origem_alimentos.id', '=', 'origem_tipos.idOrigemAlimento')
-                ->join('tipo_consumidors', "origem_tipos.idTipoConsumidor", '=', 'tipo_consumidors.id')
-                ->select('receitas.nome', 'receitas.created.at')
-                ->where('origem_tipos.idTipoConsumidor', '=', $tipoID)
-                ->get();
-
-
-        return view("tiposconsumidor",compact('tipos'));
-
-    }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $receita = receita::all();

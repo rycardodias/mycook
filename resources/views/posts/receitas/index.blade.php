@@ -19,7 +19,7 @@
         </div>
     @endforeach
 @else
-    <p>Sem receitas encontradas</p>
+    <p>Sem mensagens encontradas</p>
 @endif
 </div>
 <div class="direita">
