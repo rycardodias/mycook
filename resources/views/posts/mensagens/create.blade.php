@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../css/menu.css">
+   
     <h1>Enviar Mensagem</h1>
     {!! Form::open(['action' => 'MensagensController@store', 'method' => 'POST']) !!}
         <div class="form-group">

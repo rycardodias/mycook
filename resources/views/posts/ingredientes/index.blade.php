@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="../css/menu.css">
+<div class="nav">
+        @include('includes.navbar')
+    </div>
 <h1>Lista de Ingredientes</h1>
 @if(count($ingredientes)>0)
     @foreach($ingredientes as $ingrediente)
@@ -9,3 +13,7 @@
 @else
     <p>Sem mensagens encontradas</p>
 @endif
+
+<footer id="rodape">
+    @include('includes.footer')
+</footer> 

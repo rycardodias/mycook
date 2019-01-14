@@ -1,6 +1,8 @@
+<link rel="stylesheet" href="../css/menu.css">
+
 <div class="nav">
-        @include('includes.navbar')
-    </div>
+    @include('includes.navbar')
+</div>
 
     <h1>Criar Receitas</h1>
     {!! Form::open(['action' => 'ReceitasController@store', 'method' => 'POST']) !!}

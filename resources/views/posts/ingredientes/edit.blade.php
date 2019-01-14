@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../css/menu.css">
+
 <div class="nav">
         @include('includes.navbar')
 </div>

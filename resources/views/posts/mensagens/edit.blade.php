@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<link rel="stylesheet" href="../css/menu.css">
 
 @section('content')
     <h1>Editar Mensagem</h1>

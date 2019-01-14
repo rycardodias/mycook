@@ -1,6 +1,5 @@
-        <!-- Styles -->
-<!--        <link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
-        <link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="../css/menu.css">
+
 
 <div class="nav">
         @include('includes.navbar')

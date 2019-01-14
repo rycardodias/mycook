@@ -16,7 +16,7 @@ class ReceitasController extends Controller
     public function index()
     {
         $receita = receita::all();
-        return view('receitas')->withReceitas( $receita);
+        return view('posts.receitas.index')->withReceitas( $receita);
     }
 
     /**
