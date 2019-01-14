@@ -14,6 +14,7 @@
     <div class="nav">
         @include('includes.navbar')
     </div>
+
         <section id="formulario">
             @include('posts.utilizadores.index')
         </section>

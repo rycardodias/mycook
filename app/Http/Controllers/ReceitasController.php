@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\receita;
+use App\tipoConsumidor;
 use DB;
 
 class ReceitasController extends Controller
@@ -16,8 +17,8 @@ class ReceitasController extends Controller
 
     public function filter($tipoID)
     {
+        $receita = receita::all();
 
-        $tipos = tipoConsumidor::all();
 
         $query=
             DB::table('receitas')
@@ -25,19 +26,24 @@ class ReceitasController extends Controller
                 ->join('origem_alimentos', 'ingrediente_receitas.idIngrediente', '=', 'origem_alimentos.id')
                 ->join('origem_tipos', 'origem_alimentos.id', '=', 'origem_tipos.idOrigemAlimento')
                 ->join('tipo_consumidors', "origem_tipos.idTipoConsumidor", '=', 'tipo_consumidors.id')
-                ->select('receitas.nome', 'receitas.created.at')
+                ->select('receitas.nome', 'receitas.created_at')
                 ->where('origem_tipos.idTipoConsumidor', '=', $tipoID)
                 ->get();
 
 
-        return view("tiposconsumidor",compact('tipos'));
+        $tipos = tipoConsumidor::all();
+
+        return view("posts.receitas.index",compact('receita','query','tipos'));
+
 
     }
 
     public function index()
     {
         $receita = receita::all();
-        return view('posts.receitas.index')->withReceitas( $receita);
+        $tipos = tipoConsumidor::all();
+
+        return view('posts.receitas.index')->with(['receita' => $receita,'tipos' => $tipos ]);
     }
 
     /**

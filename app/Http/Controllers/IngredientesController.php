@@ -63,7 +63,13 @@ class IngredientesController extends Controller
      */
     public function show($id)
     {
-        $ingrediente = Ingrediente::find($id);
+       // $ingrediente = Ingrediente::find($id);
+        $ingrediente=
+            DB::table('ingredientes')
+                ->join('origem_alimentos', 'ingredientes.id', '=', 'origem_alimentos.id')
+                ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
+                ->where('ingredientes.id', '=', $id)
+                ->get();
         return view('posts.ingredientes.show')->with('ingrediente', $ingrediente);
     }
 
@@ -75,7 +81,13 @@ class IngredientesController extends Controller
      */
     public function edit($id)
     {
-        $ingrediente = Ingrediente::find($id);
+        //$ingrediente = Ingrediente::find($id);
+        $ingrediente=
+            DB::table('ingredientes')
+                ->join('origem_alimentos', 'ingredientes.id', '=', 'origem_alimentos.id')
+                ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
+                ->where('ingredientes.id', '=', $id)
+                ->get();
         return view('posts.ingredientes.edit')->with('ingrediente', $ingrediente);
     }
 
