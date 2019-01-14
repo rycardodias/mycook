@@ -3,7 +3,8 @@
 <div class="nav">
         @include('includes.navbar')
     </div>
-<div class="esquerda">
+<section class="corpo" id="receitasIndex">
+<div class="direita">
 <h1>Lista de Receitas</h1> 
 @if(count($receitas)>0)
     @foreach($receitas as $receita)
@@ -18,9 +19,10 @@
     <p>Sem mensagens encontradas</p>
 @endif
 </div>
-<div class="direita">
+<div class="esquerda">
     ola
 </div>
+</section>
 
 <footer id="rodape">
     @include('includes.footer')

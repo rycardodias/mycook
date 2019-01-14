@@ -1,5 +1,7 @@
 @php
 $variavel = 'http://127.0.0.1:8000'
+
+
 @endphp
 
 @section('botaoLogout')
@@ -11,7 +13,6 @@ $variavel = 'http://127.0.0.1:8000'
 @endsection
 
 <!--               CONDIÇOES DE MENU                -->
-
 @if(Request::url() === $variavel . '/receitas')
 <div class="nav">
     <a  href="/" id="titulo">MyCook - Make life delicious</a>

@@ -3,6 +3,7 @@
 <div class="nav">
         @include('includes.navbar')
 </div>
+<section class="corpo" id="receitasEdit">
 
 <h1>Editar Receita</h1>
 {!! Form::open(['action' => ['ReceitasController@update', $receita->id], 'method' => 'POST']) !!}
@@ -13,6 +14,10 @@
     <div class="form-group">
         <p>{{Form::label('resumo', 'resumo')}}
         <p>{{Form::text('resumo', $receita->resumo, [ 'class' => 'form-control', 'placeholder' => 'resumo'])}}
+    </div>
+    <div class="form-group">
+        <p>{{Form::label('detalhes', 'detalhes')}}
+        <p>{{Form::text('detalhes', $receita->detalhes, [ 'class' => 'form-control', 'placeholder' => 'detalhes'])}}
     </div>
     <div class="form-group">
         <p>{{Form::label('nPassos', 'nPassos')}}
@@ -36,7 +41,7 @@
     {{Form::hidden('_method', 'DELETE')}}
     {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
 {!!Form::close()!!}
-    
+</section>  
 <footer id="rodape">
     @include('includes.footer')
 </footer>    
