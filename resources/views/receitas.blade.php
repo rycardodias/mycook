@@ -16,7 +16,7 @@
     </div>
 
     <select id="tipoID">
-        <option value="">Escolha o seu Tip o</option>
+        <option value="">Escolha o seu Tipo</option>
 
         @foreach($tipos as $tipo)
 <option class="option" value="">{{$tipo->tipoConsumidor}}</option>

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5984e267-458c-49f6-9abc-6c9865af9de3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReceitasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReceitasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/receitas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/receitas/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/receitas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/receitas.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/receitas.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+            <state relative-caret-position="356">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -55,9 +58,9 @@
       <list>
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FilterController.php" />
+        <option value="$PROJECT_DIR$/resources/views/receitas.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReceitasController.php" />
         <option value="$PROJECT_DIR$/resources/views/posts/receitas/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/receitas.blade.php" />
       </list>
     </option>
   </component>
@@ -268,12 +271,12 @@
       <workItem from="1546195377722" duration="392000" />
       <workItem from="1546510971267" duration="1521000" />
       <workItem from="1547140435940" duration="635000" />
-      <workItem from="1547330065481" duration="10505000" />
+      <workItem from="1547330065481" duration="10299000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13721000" />
+    <option name="totallyTimeSpent" value="13515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -455,8 +458,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/receitas.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        <state relative-caret-position="356">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
