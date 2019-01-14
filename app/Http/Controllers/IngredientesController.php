@@ -20,6 +20,7 @@ class IngredientesController extends Controller
         ->select('ingredientes.id','ingredientes.nome', 'ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
         ->get();
         return view('posts.ingredientes.index')->with('ingredientes', $ingrediente);
+
     }
 
     /**

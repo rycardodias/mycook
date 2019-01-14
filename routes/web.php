@@ -29,9 +29,8 @@ Route::get('/CreateAccount', function () {
 });
 
 Route::get('/tipo/{tipoID}',
-    ['uses' =>'ReceitasController@filter',
-        'as' => 'tipo'
-    ])->middleware('auth');
+    ['uses' =>'ReceitasController@filter'
+    ]);
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

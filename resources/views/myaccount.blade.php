@@ -16,7 +16,7 @@
     </div>
 
         <section id="formulario">
-            @include('posts.utilizadores.index')
+            @include('posts.utilizadores.show')
         </section>
     </section>
     

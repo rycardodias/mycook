@@ -12,7 +12,7 @@
 
     @foreach($tipos as $tipo)
         <li>
-            <a href="{{route('tipo',$tipo->id)}}"><i class="fa fa-angle-right"></i> {{$tipo->tipoConsumidor}}</a>
+            <h3><a href="/tipo/{{$tipo->id}}">{{$tipo->tipoConsumidor}}</a></h3>
         </li>
     @endforeach
 </ul>
