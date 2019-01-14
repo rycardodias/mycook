@@ -15,7 +15,10 @@ class IngredientesController extends Controller
      */
     public function index()
     {
-        $ingrediente = ingrediente::all();
+        $ingrediente=DB::table('ingredientes')
+        ->join('origem_alimentos', 'ingredientes.idOrigem', '=', 'origem_alimentos.id')
+        ->select('ingredientes.id','ingredientes.nome', 'ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
+        ->get();
         return view('posts.ingredientes.index')->with('ingredientes', $ingrediente);
     }
 
@@ -63,7 +66,7 @@ class IngredientesController extends Controller
      */
     public function show($id)
     {
-        $ingrediente = Ingrediente::find($id);
+        $ingrediente = Ingrediente::find($id);   
         return view('posts.ingredientes.show')->with('ingrediente', $ingrediente);
     }
 

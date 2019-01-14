@@ -33,8 +33,6 @@
     <div class="edit">
         <p>{{$receita->updated_at}}
     </div>
-
-
 </div>
     
 </section>

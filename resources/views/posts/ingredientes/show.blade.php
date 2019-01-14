@@ -3,8 +3,10 @@
 <div class="nav">
         @include('includes.navbar')
 </div>
-    <h1>{{$ingrediente->nome}}</h1>
-    
+<section class="corpo" id="ingredientesShow">
+    <h1>Ingrediente</h1>
+
+        <h3>{{$ingrediente->nome}}</h3>
         <p>{{$ingrediente->descricao}}
         <p>{{$ingrediente->idUtilizador}}
         <p>{{$ingrediente->idOrigem}}
@@ -17,6 +19,8 @@
         {{Form::hidden('_method', 'DELETE')}}
         {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
     {!!Form::close()!!}
+    
+</section>
     <footer id="rodape">
     @include('includes.footer')
 </footer> 

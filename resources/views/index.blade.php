@@ -16,17 +16,16 @@
     </div>
     <section class="corpo" id="index">
         <div class="esquerda">
-            <div class="video">
-                <video width="320" height="240" controls>
-                    <source src="css/joke.mp4" type="video/mp4">
-                </video>
+            <div class="logo">
+                <img src="img/logo.png">
             </div>
         </div>
         <div class="direita">
             @if(Auth::guest())
-            <div class="login">
+            <div class="login" >
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
+                    <p>Email:
                     <p><input id="email" placeholder="Email" type="email"  name="email" value="{{ old('email') }}" required autofocus>
                         @if ($errors->has('email'))
                             <span class="invalid-feedback" role="alert">
@@ -34,8 +33,8 @@
                             </span>
                         @endif
                     </p>
-                    <p>
-                        <input id="password" placeholder="Password" type="password" name="password" required>
+                    <p>Password:
+                    <p><input id="password" placeholder="Password" type="password" name="password" required>
                         @if ($errors->has('password'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('password') }}</strong>
