@@ -69,6 +69,7 @@ hgroup#redesSociais a:hover {
     padding: 0 30px 0 30px;
 }
 
+/* CORPO INDEX */
 .corpo#index {
     background-repeat: no-repeat;
     background-size:cover; 
@@ -109,6 +110,66 @@ hgroup#redesSociais a:hover {
     height: 100%;
     object-position: center;
 }
+
+/* CORPO RECEITAS@INDEX */
+
+.corpo#receitasIndex .esquerda {
+    width: 25%;
+    float: left;
+}
+
+.corpo#receitasIndex .direita {
+    width: 75%;
+    float: right;
+}
+
+/* CORPO RECEITAS@SHOW */
+
+.corpo#receitasShow .esquerda {
+    width: 35%;
+    float: left;
+}
+
+.corpo#receitasShow .esquerda img {
+    width: 75%;
+}
+
+.corpo#receitasShow .direita {
+    width: 65%;
+    float: right;
+}
+
+.corpo#receitasShow .direita .detalhes {
+    height: 25%;
+}
+
+.corpo#receitasShow .direita .passos {
+    height: 25%;
+}
+
+.corpo#receitasShow .direita .nPessoas {
+    height: 25%;
+}
+
+.corpo#receitasShow .direita .edit {
+    float: right;
+}
+
+
+/* CORPO INGREDIENTES@INDEX */
+
+.corpo#ingredientesIndex .esquerda {
+    width: 25%;
+    float: left;
+}
+
+
+.corpo#ingredientesIndex .direita {
+    width: 75%;
+    float: right;
+}
+
+
 
 
 

@@ -1,15 +1,10 @@
-<style>
-.esquerdaa  {
-    width: 75%;
-    float: left;
-}
+<link rel="stylesheet" href="../css/menu.css">
 
-.direitaa  s{
-    width: 25%;
-    float: right;
-}
-</style>
-<div class="esquerda">
+<div class="nav">
+        @include('includes.navbar')
+    </div>
+<section class="corpo" id="receitasIndex">
+<div class="direita">
 <h1>Lista de Receitas</h1> 
 @if(count($receitas)>0)
     @foreach($receitas as $receita)
@@ -18,11 +13,18 @@
             <small>Criada em {{$receita->created_at}}</small>
         </div>
     @endforeach
+    <a href="/receitas/create">Criar Receita</a>
+
 @else
     <p>Sem mensagens encontradas</p>
 @endif
 </div>
-<div class="direita">
+<div class="esquerda">
     ola
 </div>
+</section>
+
+<footer id="rodape">
+    @include('includes.footer')
+</footer>
 

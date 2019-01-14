@@ -16,7 +16,7 @@ class IngredientesController extends Controller
     public function index()
     {
         $ingrediente = ingrediente::all();
-        return view('ingredientes')->with('ingredientes', $ingrediente);
+        return view('posts.ingredientes.index')->with('ingredientes', $ingrediente);
     }
 
     /**
