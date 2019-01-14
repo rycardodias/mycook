@@ -17,15 +17,15 @@ class ReceitasController extends Controller
 
     public function filter($tipoID)
     {
-//        $tipos=
-//            DB::table('receitas')
-//                ->join('ingrediente_receitas', 'receitas.id', '=', 'ingrediente_receitas.idReceita')
-//                ->join('origem_alimentos', 'ingrediente_receitas.idIngrediente', '=', 'origem_alimentos.id')
-//                ->join('origem_tipos', 'origem_alimentos.id', '=', 'origem_tipos.idOrigemAlimento')
-//                ->join('tipo_consumidors', "origem_tipos.idTipoConsumidor", '=', 'tipo_consumidors.id')
-//                ->select('receitas.nome', 'receitas.created_at')
-//                ->where('origem_tipos.idTipoConsumidor', '=', $tipoID)
-//                ->get();
+        $tipos=
+            DB::table('receitas')
+                ->join('ingrediente_receitas', 'receitas.id', '=', 'ingrediente_receitas.idReceita')
+                ->join('origem_alimentos', 'ingrediente_receitas.idIngrediente', '=', 'origem_alimentos.id')
+                ->join('origem_tipos', 'origem_alimentos.id', '=', 'origem_tipos.idOrigemAlimento')
+                ->join('tipo_consumidors', "origem_tipos.idTipoConsumidor", '=', 'tipo_consumidors.id')
+                ->select('receitas.nome', 'receitas.created_at')
+                ->where('origem_tipos.idTipoConsumidor', '=', $tipoID)
+                ->get();
 
 
 
@@ -87,18 +87,8 @@ class ReceitasController extends Controller
      */
     public function show($id)
     {
-//        $receita = receita::find($id);
-        $receita=
-            DB::table('receitas')
-                ->join('ingrediente_receitas', 'receitas.id', '=', 'ingrediente_receitas.idReceita')
-                ->join('origem_alimentos', 'ingrediente_receitas.idIngrediente', '=', 'origem_alimentos.id')
-                ->join('origem_tipos', 'origem_alimentos.id', '=', 'origem_tipos.idOrigemAlimento')
-                ->join('tipo_consumidors', "origem_tipos.idTipoConsumidor", '=', 'tipo_consumidors.id')
-                ->select('receitas.nome', 'receitas.created_at')
-                ->where('origem_tipos.idTipoConsumidor', '=', $id)
-                ->get();
-
-        return view('posts.receitas.show')->with('receita',$receita);
+        $receita = receita::find($id);
+        return view('posts.receitas.show')->withReceita($receita);
     }
 
     /**
