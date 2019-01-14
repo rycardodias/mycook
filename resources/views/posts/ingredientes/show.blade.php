@@ -3,18 +3,11 @@
 <div class="nav">
         @include('includes.navbar')
 </div>
-<<<<<<< HEAD
-<section class="corpo" id="ingredientesShow">
-    <h1>Ingrediente</h1>
-
-        <h3>{{$ingrediente->nome}}</h3>
-=======
 
 @foreach ($ingrediente as $ingrediente)
 
     <h1>{{$ingrediente->nome}}</h1>
     
->>>>>>> 118426c81a22d7c65dce0f71fba1a2cb78f15bd5
         <p>{{$ingrediente->descricao}}
         <p>{{$ingrediente->idUtilizador}}
         <p>{{$ingrediente->origemAlimento}}

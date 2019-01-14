@@ -20,7 +20,6 @@
     <section class="corpo" id="register">
         <form method="POST" action="{{ route('register') }}">
             @csrf
-            <label for="name">Name:</label>
             <p><input id="name" placeholder="{{ __('Name') }}" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus></p>
             @if ($errors->has('name'))
                 <span class="invalid-feedback" role="alert">

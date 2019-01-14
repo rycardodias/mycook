@@ -66,9 +66,6 @@ class IngredientesController extends Controller
      */
     public function show($id)
     {
-<<<<<<< HEAD
-        $ingrediente = Ingrediente::find($id);   
-=======
        // $ingrediente = Ingrediente::find($id);
         $ingrediente=
             DB::table('ingredientes')
@@ -76,7 +73,6 @@ class IngredientesController extends Controller
                 ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
                 ->where('ingredientes.id', '=', $id)
                 ->get();
->>>>>>> 118426c81a22d7c65dce0f71fba1a2cb78f15bd5
         return view('posts.ingredientes.show')->with('ingrediente', $ingrediente);
     }
 
