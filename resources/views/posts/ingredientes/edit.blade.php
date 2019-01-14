@@ -3,6 +3,7 @@
 <div class="nav">
         @include('includes.navbar')
 </div>
+@foreach ($ingrediente as $ingrediente)
     <h1>Editar idOrigem</h1>
     {!! Form::open(['action' => ['IngredientesController@update', $ingrediente->id], 'method' => 'POST']) !!}
         <div class="form-group">
@@ -19,7 +20,7 @@
         </div>
         <div class="form-group">
             <p>{{Form::label('idOrigem', 'idOrigem')}}
-            <p>{{Form::text('idOrigem', $ingrediente->idOrigem, ['class' => 'form-control', 'placeholder' => 'idOrigem'])}}
+            <p>{{Form::text('idOrigem', $ingrediente->origemAlimento, ['class' => 'form-control', 'placeholder' => 'idOrigem'])}}
         </div>
 
         {{Form::hidden('_method', 'PUT')}}
@@ -31,7 +32,7 @@
         {{Form::hidden('_method', 'DELETE')}}
         {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
     {!!Form::close()!!}
-    
+    @endforeach
 <footer id="rodape">
     @include('includes.footer')
 </footer> 
