@@ -14,6 +14,16 @@
     <div class="nav">
         @include('includes.navbar')
     </div>
+
+    <select id="tipoID">
+        <option value="">Escolha o seu Tipo</option>
+
+        @foreach($tipos as $tipo)
+<option class="option" value="">{{$tipo->tipoConsumidor}}</option>
+        @endforeach
+    </select>
+
+
         <section id="formulario">
             @include('posts.receitas.index')
             <a href="/receitas/create">Criar Receita</a>
