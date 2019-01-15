@@ -38,14 +38,14 @@ $variavel = 'http://127.0.0.1:8000'
 
 
 
-@if(Request::url() === $variavel )
+@if(Request::url() === $variavel || Request::url() === $variavel . '/contactos' || Request::url() === $variavel . '/sobre')
     @if(Auth::guest())
         <div class="nav">
             <a  href="/" id="titulo">MyCook - Make life delicious</a>
             <div class="menu">
                 <a id="pagAtual" href="/">Início</a> 
-                <a href="Sobre">Sobre</a>
-                <a href="Contactos">Contactos</a>
+                <a href="sobre">Sobre</a>
+                <a href="contactos">Contactos</a>
                 @yield('botaoLogout')
             </div>
         </div>

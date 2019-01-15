@@ -74,7 +74,6 @@ hgroup#redesSociais a:hover {
     background-repeat: no-repeat;
     background-size:cover; 
     background-position: center; 
-
 }
 .corpo#index img{
     padding-top: 7%;
@@ -102,6 +101,12 @@ hgroup#redesSociais a:hover {
     vertical-align: middle;    
 }
 
+.corpo#index .direita div.loginLigado {
+    padding-top: 12%;
+}
+
+
+
 .corpo#register{
     
     background-position: center; 
@@ -120,6 +125,45 @@ hgroup#redesSociais a:hover {
     width: 75%;
     float: right;
 }
+
+/* CONTACTOS */
+
+.corpo#contactos .esquerda {
+    width: 45%;
+    float: left;
+}
+
+#formulario {
+    padding-top: 15px;
+
+}
+
+#formulario input{
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 50%;
+    padding-left: 5px;
+    resize: none;
+    font-size: 16px;
+    padding-bottom: 2px;
+}
+
+#formulario .btn  {
+    color: coral;
+    font-size: 18px;
+    border-radius: 4px;
+    border: 1px solid coral;
+}
+
+.corpo#contactos .direita {
+    width: 55%;
+    float: right;
+}
+
+.corpo#contactos .direita iframe{
+    padding-top: 6%;
+}
+
 
 /* CORPO RECEITAS@SHOW */
 
@@ -160,7 +204,6 @@ hgroup#redesSociais a:hover {
     width: 25%;
     float: left;
 }
-
 
 .corpo#ingredientesIndex .direita {
     width: 75%;
