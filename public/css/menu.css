@@ -105,7 +105,7 @@ hgroup#redesSociais a:hover {
     padding-top: 12%;
 }
 
-
+/* REGISTO */
 
 .corpo#register{
     
@@ -121,9 +121,24 @@ hgroup#redesSociais a:hover {
     float: left;
 }
 
+.corpo#receitasIndex .esquerda .filtroTipoConsumidor{
+   
+}
+
+.corpo#receitasIndex .esquerda .opcao a{
+   padding-left: 20px;
+   color: black;
+   text-decoration: none;
+}
+
 .corpo#receitasIndex .direita {
     width: 75%;
     float: right;
+}
+
+.corpo#receitasIndex .direita a {
+    color: black;
+
 }
 
 /* CONTACTOS */
@@ -135,7 +150,6 @@ hgroup#redesSociais a:hover {
 
 #formulario {
     padding-top: 15px;
-
 }
 
 #formulario input{
@@ -164,6 +178,23 @@ hgroup#redesSociais a:hover {
     padding-top: 6%;
 }
 
+/* SOBRE */
+
+.corpo#sobre .esquerda {
+    width: 50%;
+    float: left;
+}
+
+.corpo#sobre .direita {
+    width: 45%;
+    float: right;
+}
+
+.corpo#sobre .direita img{
+    padding-top: 7%;
+    display: block;
+    width: 75%;
+}
 
 /* CORPO RECEITAS@SHOW */
 

@@ -1,51 +1,32 @@
-@php
-$variavel = 'http://127.0.0.1:8000'
-
-
-@endphp
+@php $variavel = 'http://127.0.0.1:8000'@endphp
 
 @section('botaoLogout')
-@if(Auth::guest())
-        @else
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Sair') }}</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
-        @endif
+    @if(Auth::guest())
+    @else
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Sair') }}</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
+    @endif
 @endsection
 
-<!--               CONDIÇOES DE MENU                -->
-@if(Request::url() === $variavel . '/receitas')
-<div class="nav">
-    <a  href="/" id="titulo">MyCook - Make life delicious</a>
-    <!--<label for="toggle">&#9776;</label>
-    <input type="checkbox" id="toggle"/> -->
-    <div class="menu">
-        <a id="pagAtual" href="ingredientes">Ingredientes</a> 
-        <a href="myaccount">Minha Conta</a>
-        @yield('botaoLogout')
-    </div>
-</div>
-@endif
-@if(Request::url() === $variavel . '/ingredientes')
-<div class="nav">
-    <a  href="/" id="titulo">MyCook - Make life delicious</a>
-    <div class="menu">
-        <a id="pagAtual" href="receitas">Receitas</a> 
-        <a href="myaccount">Minha Conta</a>
-        @yield('botaoLogout')
-    </div>
-</div>
-@endif
-
-
-
+<!-- PAGINAS INICIAIS -->
 @if(Request::url() === $variavel || Request::url() === $variavel . '/contactos' || Request::url() === $variavel . '/sobre')
     @if(Auth::guest())
         <div class="nav">
             <a  href="/" id="titulo">MyCook - Make life delicious</a>
             <div class="menu">
-                <a id="pagAtual" href="/">Início</a> 
-                <a href="sobre">Sobre</a>
-                <a href="contactos">Contactos</a>
+                @if(Request::url() === $variavel)
+                    <a id="pagAtual" href="/">Início</a> 
+                    <a href="sobre">Sobre</a>
+                    <a href="contactos">Contactos</a>
+                @elseif(Request::url() ===  $variavel . '/contactos') 
+                    <a href="/">Início</a> 
+                    <a href="sobre">Sobre</a>
+                    <a id="pagAtual" href="contactos">Contactos</a>
+                @else(Request::url() ===  $variavel . '/sobre') 
+                    <a href="/">Início</a> 
+                    <a id="pagAtual" href="sobre">Sobre</a>
+                    <a  href="contactos">Contactos</a>
+                @endif
                 @yield('botaoLogout')
             </div>
         </div>
@@ -60,10 +41,22 @@ $variavel = 'http://127.0.0.1:8000'
         </div>
     @endif
 @endif
-@if(Request::url() === $variavel . '/ola' )
-<div class="nav">
-    <a  href="/" id="titulo">Versão de TESTES</a>
 
+<!--               RECEITAS                -->
+@if(Request::url() === $variavel . '/receitas' || Request::url() === $variavel . '/ingredientes')
+<div class="nav">
+    <a  href="/" id="titulo">MyCook - Make life delicious</a>
+    <div class="menu">
+        @if(Request::url() === $variavel . '/receitas')
+            <a id="pagAtual" href="ingredientes">Ingredientes</a> 
+        @else
+            <a id="pagAtual" href="receitas">Receitas</a> 
+        @endif
+        <a href="myaccount">Minha Conta</a>
+        @yield('botaoLogout')
+    </div>
 </div>
 @endif
+
+
 

@@ -15,9 +15,15 @@
     </div>
     <section class="corpo" id="sobre">
         <section class="texto" id="sobre">
-            <h1>Sobre Nós</h1>
-            <p></p>
-        </section>
+            <div class="esquerda">
+                <h1>Sobre Nós</h1>
+                <p>Lorem ipsum pretium erat aptent imperdiet aenean dapibus tortor auctor lorem pellentesque, bibendum tristique aenean fermentum massa feugiat sem magna justo. curae cursus tortor volutpat faucibus facilisis inceptos lorem, integer donec hac commodo sodales ad congue, nulla quisque potenti cubilia lorem nisi. eget vel odio dolor aliquam per nulla vitae class tempor nulla, proin gravida ornare sollicitudin consectetur inceptos vehicula sociosqu semper id mollis, nec 
+                suspendisse nisl netus condimentum aliquam turpis id adipiscing. bibendum neque dictumst sed tristique praesent faucibus velit faucibus cubilia tristique et, per condimentum orci praesent mattis felis non habitant vestibulum. 
+            </div>  
+            <div class="direita">
+                <img src="#" >
+            </div>  
+            </section>
     </section>
     
 <footer id="rodape">
