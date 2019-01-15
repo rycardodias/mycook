@@ -63,6 +63,7 @@ class ReceitasController extends Controller
         $this->validate($request, [
             'nome' => 'required',
             'resumo' => 'required',
+            'detalhes' => 'required',
             'nPassos' => 'required',
             'nPessoas' => 'required',
             'idUtilizador' => 'required'
@@ -72,6 +73,7 @@ class ReceitasController extends Controller
         $receita = new receita;
         $receita->nome = $request->input('nome');
         $receita->resumo = $request->input('resumo');
+        $receita->detalhes = $request->input('detalhes');
         $receita->nPassos = $request->input('nPassos');
         $receita->nPessoas = $request->input('nPessoas');
         $receita->idUtilizador = $request->input('idUtilizador');

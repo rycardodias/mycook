@@ -23,19 +23,9 @@ class CreateReceitasTable extends Migration
                 $table->unsignedInteger('idUtilizador');
             $table->foreign('idUtilizador')->references('id')->on('users');
             $table->timestamps();
+
         });
-        DB::table('receitas')->insert(array(
-            array(
-                'nome' => 'Bife grelhado com batatas fritas',
-                'resumo' => 'Bife grelhado com batatas fritas na panela de pressão',
-                'nPassos' => '1ºFritar os bifes 2º Fritar as batatas',
-                'detalhes' => 'O Bife grelhado com batatas fritas é uma receita bla bla bla bla bla pardais ao ninho. Ponto final paragrafo',
-                'nPessoas' => '2',
-                'idUtilizador' => '1',
-                'created_at' => \Carbon\Carbon::now(),
-                'updated_at' => \Carbon\Carbon::now()
-            ),
-        ));
+        
     }
 
     /**
