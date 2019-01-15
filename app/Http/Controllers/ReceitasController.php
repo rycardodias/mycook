@@ -18,6 +18,7 @@ class ReceitasController extends Controller
     public function filter($tipoID)
     {
         $listatipos = tipoConsumidor::all();
+
         $tipo=
             DB::table('receitas')
                 ->join('ingrediente_receitas', 'receitas.id', '=', 'ingrediente_receitas.idReceita')

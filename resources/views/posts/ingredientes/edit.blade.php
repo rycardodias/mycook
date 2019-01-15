@@ -20,7 +20,14 @@
         </div>
         <div class="form-group">
             <p>{{Form::label('idOrigem', 'idOrigem')}}
-            <p>{{Form::text('idOrigem', $ingrediente->origemAlimento, ['class' => 'form-control', 'placeholder' => 'idOrigem'])}}
+
+            <p><select id="opcao">
+                    <option value="">Selecione a Origem do alimento</option>
+                    @foreach($listatipos as $lista)
+                <option value="{{$lista->id}}">{{$lista->origemAlimento}}</option>
+                    @endforeach
+
+            </select>
         </div>
 
         {{Form::hidden('_method', 'PUT')}}

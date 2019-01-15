@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\origemAlimento;
+use App\origemTipo;
 use Illuminate\Http\Request;
 use App\ingrediente;
 use DB;
@@ -22,6 +24,7 @@ class IngredientesController extends Controller
         return view('posts.ingredientes.index')->with('ingredientes', $ingrediente);
 
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -85,14 +88,20 @@ class IngredientesController extends Controller
      */
     public function edit($id)
     {
-        //$ingrediente = Ingrediente::find($id);
+        $listatipos = origemAlimento::all();
+
+
         $ingrediente=
             DB::table('ingredientes')
                 ->join('origem_alimentos', 'ingredientes.id', '=', 'origem_alimentos.id')
                 ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
                 ->where('ingredientes.id', '=', $id)
                 ->get();
-        return view('posts.ingredientes.edit')->with('ingrediente', $ingrediente);
+
+        return view('posts.ingredientes.edit')->with(['ingrediente' => $ingrediente,'listatipos' => $listatipos ]);
+
+
+       // return view('posts.ingredientes.edit',compact('ingrediente','listatipos'));
     }
 
     /**
@@ -116,7 +125,7 @@ class IngredientesController extends Controller
         $ingrediente->nome = $request->input('nome');
         $ingrediente->descricao = $request->input('descricao');
         $ingrediente->idUtilizador = $request->input('idUtilizador');
-        $ingrediente->idOrigem = $request->input('idOrigem');
+        $ingrediente->idOrigem = $request->opcao;
         $ingrediente->save();
 
         return redirect('ingredientes')->with('success', 'Ingrediente atualizado');
