@@ -1,7 +1,9 @@
-@extends('layouts.app')
+<link rel="stylesheet" href="../css/menu.css">
 
-@section('content')
-    <h1>Lista de Mensagens</h1>
+<div class="nav">
+    @include('includes.navbar')
+</div>
+   <h1>Lista de Mensagens</h1>
     @if(count($mensagens)>0)
         @foreach($mensagens as $mensagem)
             <div class="well">
@@ -12,4 +14,3 @@
     @else
         <p>Sem mensagens encontradas</p>
     @endif
-@endsection

@@ -244,6 +244,12 @@ hgroup#redesSociais a:hover {
     float: left;
 }
 
+.corpo#ingredientesIndex .esquerda .opcao a{
+    padding-left: 20px;
+    color: black;
+    text-decoration: none;
+}
+
 .corpo#ingredientesIndex .direita {
     width: 75%;
     float: right;
@@ -262,6 +268,28 @@ hgroup#redesSociais a:hover {
   .corpo#ingredientesIndex .direita tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+  /* UTILIZADORES SHOW */
+
+  .corpo#utilizadoresShow .esquerda {
+    width: 25%;
+    float: left;
+  }
+  .corpo#utilizadoresShow .esquerda img{
+    padding-top: 15px;
+    height: 350px;
+    width: 350px;
+  }
+  .corpo#utilizadoresShow .direita {
+    width: 75%;
+    float: right; 
+}
+
+
+
+
+
+
 
 
 

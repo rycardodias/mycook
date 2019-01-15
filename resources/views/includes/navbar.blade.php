@@ -67,16 +67,24 @@
 @endif
 
 <!--               RECEITAS                -->
-@if(Request::url() === $variavel . '/receitas' || Request::url() === $variavel . '/ingredientes')
+@if(Request::url() === $variavel . '/receitas' || Request::url() === $variavel . '/ingredientes'|| Request::url() === $variavel . '/myaccount/1')
 <div class="nav">
     <a  href="/" id="titulo">MyCook - Make life delicious</a>
     <div class="menu">
+        <a href="/">Início</a> 
+        <a href="/sobre">Sobre</a>
+        <a  href="/contactos">Contactos</a> |
         @if(Request::url() === $variavel . '/receitas')
-            <a id="pagAtual" href="ingredientes">Ingredientes</a> 
+            <a id="pagAtual" href="receitas">Receitas</a>
+            <a href="ingredientes">Ingredientes</a>
+            <a href="myaccount/{{ Auth::user()->id }}">Minha Conta</a>
+        @elseif(Request::url() === $variavel . '/ingredientes')
+            <a  href="receitas">Receitas</a>
+            <a id="pagAtual" href="ingredientes">Ingredientes</a>
+            <a href="myaccount/{{ Auth::user()->id }}">Minha Conta</a>
         @else
-            <a id="pagAtual" href="receitas">Receitas</a> 
+            <a id="pagAtual" href="">Minha Conta</a>
         @endif
-        <a href="myaccount/{{ Auth::user()->id }}">Minha Conta</a>
         @yield('botaoLogout')
     </div>
 </div>
