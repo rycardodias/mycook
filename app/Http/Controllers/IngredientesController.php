@@ -35,16 +35,18 @@ class IngredientesController extends Controller
 
     public function index()
     {
+
+        $lista = origemAlimento::all();
+
+
+
         $ingredientes=DB::table('ingredientes')
         ->join('origem_alimentos', 'ingredientes.idOrigem', '=', 'origem_alimentos.id')
         ->select('ingredientes.id','ingredientes.nome', 'ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
             ->orderBy('ingredientes.id')
             ->get();
 
-
-        $lista = origemAlimento::all();
-
-        return view('posts.ingredientes.index')->with(['ingredientes' => $ingredientes, 'lista' => $lista]);
+        return view('posts.ingredientes.index',compact('ingredientes' ,'lista' ));
 
     }
 
@@ -97,10 +99,11 @@ class IngredientesController extends Controller
 
         $ingrediente=
             DB::table('ingredientes')
-                ->join('origem_alimentos', 'ingredientes.id', '=', 'origem_alimentos.id')
+                ->join('origem_alimentos', 'ingredientes.idOrigem', '=', 'origem_alimentos.id')
                 ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
                 ->where('ingredientes.id', '=', $id)
                 ->get();
+
         return view('posts.ingredientes.show')->with('ingrediente', $ingrediente);
     }
 

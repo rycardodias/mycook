@@ -3,11 +3,13 @@
 <div class="nav">
     @include('includes.navbar')
 </div>
+
+@foreach($lista as $lista)
+<p><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a>
+    @endforeach
 <section class="corpo" id="ingredientesIndex">
     <div class="direita">
-        @foreach($lista as $lista)
-            <p><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a>
-        @endforeach
+
                 <a href="/ingredientes/create">Criar Receita</a>
 <h1>Lista de Ingredientes</h1>
 @if(count($ingredientes)>0)
@@ -24,6 +26,7 @@
                 <td>{{$ingrediente->descricao}}</td>
                 <td>{{$ingrediente->origemAlimento}}</td>
                 <td><a href="/ingredientes/{{$ingrediente->id}}">Ver mais</a></td>
+
             </tr>
             @endforeach
         </table>
@@ -33,6 +36,8 @@
 @endif
     </div>
 </section>
+
+
 </div>
 <div class="esquerda">
 </div>
