@@ -28,9 +28,11 @@
             <p>{{Form::text('nPessoas', '', ['class' => 'form-control', 'placeholder' => 'nPessoas'])}}
         </div>
         <div class="form-group">
-            <p>{{Form::label('idUtilizador', 'idUtilizador')}}
-            <p>{{Form::text('idUtilizador', '', ['class' => 'form-control', 'placeholder' => 'idUtilizador'])}}
+
+            <p>{{Form::text('idUtilizador', Auth::user()->id , ['class' => 'form-control', 'placeholder' => 'idUtilizador','style' => 'visibility: hidden;'])}}
         </div>
+
+
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
 
     {!! Form::close() !!}

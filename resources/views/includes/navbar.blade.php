@@ -52,7 +52,7 @@
         @else
             <a id="pagAtual" href="receitas">Receitas</a> 
         @endif
-        <a href="myaccount">Minha Conta</a>
+        <a href="myaccount/{{ Auth::user()->id }}">Minha Conta</a>
         @yield('botaoLogout')
     </div>
 </div>

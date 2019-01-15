@@ -28,6 +28,8 @@ Route::get('/CreateAccount', function () {
     return view('createAccount');
 });
 
+
+
 Route::get('/tipo/{tipoID}',
     ['uses' =>'ReceitasController@filter'
     ]);
