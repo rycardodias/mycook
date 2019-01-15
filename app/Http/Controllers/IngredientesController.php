@@ -15,13 +15,34 @@ class IngredientesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function filter($tipoID)
+    {
+        $listaorigem = origemTipo::all();
+
+        $origem=
+            DB::table('ingredientes')
+                ->join('origem_alimentos', 'ingredientes.idOrigem', '=', 'origem_alimentos.id')
+                ->join('origem_tipos', 'origem_alimentos.id', '=', 'origem_tipos.idOrigemAlimento')
+                ->select('ingredientes.id','ingredientes.nome', 'ingredientes.created_at','origem_alimentos.origemAlimento')
+                ->where('origem_tipos.idOrigemAlimento', '=', $tipoID)
+                ->get();
+
+
+
+        return view("posts.ingredientes.showfilters",compact('origem','listaorigem'));
+    }
+
     public function index()
     {
-        $ingrediente=DB::table('ingredientes')
+        $ingredientes=DB::table('ingredientes')
         ->join('origem_alimentos', 'ingredientes.idOrigem', '=', 'origem_alimentos.id')
         ->select('ingredientes.id','ingredientes.nome', 'ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
         ->get();
-        return view('posts.ingredientes.index')->with('ingredientes', $ingrediente);
+
+
+        $lista = origemAlimento::all();
+
+        return view('posts.ingredientes.index')->with(['ingredientes' => $ingredientes, 'lista' => $lista]);
 
     }
 

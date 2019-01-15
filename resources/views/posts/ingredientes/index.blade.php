@@ -5,6 +5,10 @@
 </div>
 <section class="corpo" id="ingredientesIndex">
     <div class="direita">
+        @foreach($lista as $lista)
+            <p><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a>
+        @endforeach
+
 <h1>Lista de Ingredientes</h1>
 @if(count($ingredientes)>0)
     <table>

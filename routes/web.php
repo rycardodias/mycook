@@ -34,6 +34,10 @@ Route::get('/tipo/{tipoID}',
     ['uses' =>'ReceitasController@filter'
     ]);
 
+Route::get('/origem/{tipoID}',
+    ['uses' =>'IngredientesController@filter'
+    ]);
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('mensagens', 'MensagensController')->middleware('auth');
