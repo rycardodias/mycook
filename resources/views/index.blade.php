@@ -50,9 +50,7 @@
                         <button type="submit">{{ __('Login') }}</button>
 
                         @if (Route::has('password.request'))
-                            <p><a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a></p>
+                            
                         @if (Route::has('register'))
                            <p> <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></p>
                         @endif

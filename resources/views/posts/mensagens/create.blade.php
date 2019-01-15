@@ -14,6 +14,6 @@
         <div class="form-group">
             <p>{{Form::text('mensagem', '', ['class' => 'form-control', 'placeholder' => 'Mensagem'])}}
         </div>
-        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+        {{Form::submit('Enviar', ['class' => 'btn btn-primary'])}}
 
     {!! Form::close() !!}

@@ -34,8 +34,32 @@
     <div class="nav">
             <a  href="/" id="titulo">MyCook - Make life delicious</a>
             <div class="menu">
-                <a id="pagAtual" href="receitas">Receitas</a> 
-                <a href="ingredientes">Ingredientes</a>
+            @if(Request::url() === $variavel)
+                    <a id="pagAtual" href="/">Início</a> 
+                    <a href="sobre">Sobre</a>
+                    <a href="contactos">Contactos</a>
+                    |
+                    <a  href="ingredientes">Ingredientes</a> 
+                    <a  href="receitas">Receitas</a>
+                    <a href="myaccount/{{ Auth::user()->id }}">Minha Conta</a>
+
+                @elseif(Request::url() ===  $variavel . '/contactos') 
+                    <a href="/">Início</a> 
+                    <a href="sobre">Sobre</a>
+                    <a id="pagAtual" href="contactos">Contactos</a>
+                    |
+                    <a  href="ingredientes">Ingredientes</a> 
+                    <a  href="receitas">Receitas</a>
+                    <a href="myaccount/{{ Auth::user()->id }}">Minha Conta</a>
+                @else(Request::url() ===  $variavel . '/sobre') 
+                    <a href="/">Início</a> 
+                    <a id="pagAtual" href="sobre">Sobre</a>
+                    <a  href="contactos">Contactos</a>
+                    |
+                    <a  href="ingredientes">Ingredientes</a> 
+                    <a  href="receitas">Receitas</a>
+                    <a href="myaccount/{{ Auth::user()->id }}">Minha Conta</a>
+                @endif
                 @yield('botaoLogout')
             </div>
         </div>
