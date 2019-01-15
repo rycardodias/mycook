@@ -141,6 +141,14 @@ hgroup#redesSociais a:hover {
 
 }
 
+/* RECEITAS FILTROS */
+
+.corpo#showfilter .esquerda .opcao a{
+    padding-left: 20px;
+    color: black;
+    text-decoration: none;
+ }
+
 /* CONTACTOS */
 
 .corpo#contactos .esquerda {

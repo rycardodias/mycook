@@ -5,36 +5,29 @@
     @include('includes.navbar')
 </div>
 
-<div class="widget">
-    <div class="widget-heading">
-        <h4>Tipo Consumidor</h4>
+<section class="corpo" id="showfilter">
+    <div class="esquerda">
+        <div class="filtroTipoConsumidor">
+            <h3>Tipo Consumidor</h3>
+            <div class="opcao">
+                @foreach($listatipos as $lista)
+                    <h3><a href="/tipo/{{$lista->id}}">{{$lista->tipoConsumidor}}</a></h3>  
+                @endforeach
+            </div>
+        </div>
     </div>
-    <div class="widget-body">
-        <ul class="categories">
-@foreach($listatipos as $lista)
-    <li>
-        <h3><a href="/tipo/{{$lista->id}}">{{$lista->tipoConsumidor}}</a></h3>
-    </li>
-@endforeach
-</ul>
-    </div>
-    </div>
-
-<section class="corpo" id="receitasShow">
-    @if(!empty($tipo))
-    @foreach ($tipo as $tipo)
-
-        <h5> Filtro {{$tipo->tipoConsumidor}}</h5>
-            <h3><a href="/receitas/{{$tipo->id}}">{{$tipo->nome}}</a></h3>
-        <p>{{$tipo->created_at}}
-    @endforeach
-
+    <div class="direita">
+        @if(!empty($tipo))
+        @foreach ($tipo as $tipo)
+            <h5> Filtro {{$tipo->tipoConsumidor}}</h5>
+                <h3><a href="/receitas/{{$tipo->id}}">{{$tipo->nome}}</a></h3>
+            <p>{{$tipo->created_at}}
+        @endforeach
         @else
             <p>Sem receitas encontradas</p>
         @endif
-
-        <a href="/receitas/create">Criar Receita</a>
-
+            <a href="/receitas/create">Criar Receita</a>
+    </div>
 </section>
 <footer id="rodape">
     @include('includes.footer')

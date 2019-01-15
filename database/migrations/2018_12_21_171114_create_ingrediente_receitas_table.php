@@ -22,6 +22,110 @@ class CreateIngredienteReceitasTable extends Migration
             $table->foreign('idUnidadeMedida')->references('id')->on('unidade_medidas');
             $table->integer('quantidade');
         });
+
+        DB::table('ingrediente_receitas')->insert(array(
+            array(
+            'idReceita' => '1',
+            'idIngrediente' => '3',
+            'idUnidadeMedida' => '13',
+            'quantidade' => '700',
+            ),
+            array(
+            'idReceita' => '1',
+            'idIngrediente' => '4',
+            'idUnidadeMedida' => '8',
+            'quantidade' => '600',
+            ),
+            array(
+            'idReceita' => '1',
+            'idIngrediente' => '5',
+            'idUnidadeMedida' => '3',
+            'quantidade' => '2',
+            ),
+            array(
+            'idReceita' => '1',
+            'idIngrediente' => '7',
+            'idUnidadeMedida' => '8',
+            'quantidade' => '200',
+            ),
+            // CREPE MARMORE
+
+            array(
+            'idReceita' => '2',
+            'idIngrediente' => '6',
+            'idUnidadeMedida' => '13',
+            'quantidade' => '250',
+            ),
+            array(
+            'idReceita' => '2',
+            'idIngrediente' => '9',
+            'idUnidadeMedida' => '6',
+            'quantidade' => '1',
+            ),
+            array(
+            'idReceita' => '2',
+            'idIngrediente' => '11',
+            'idUnidadeMedida' => '13',
+            'quantidade' => '80',
+            ),
+            array(
+            'idReceita' => '2',
+            'idIngrediente' => '12',
+            'idUnidadeMedida' => '7',
+            'quantidade' => '4',
+            ),
+
+            array(
+                'idReceita' => '3',
+                'idIngrediente' => '3',
+                'idUnidadeMedida' => '13',
+                'quantidade' => '700',
+                ),
+                array(
+                'idReceita' => '3',
+                'idIngrediente' => '4',
+                'idUnidadeMedida' => '8',
+                'quantidade' => '600',
+                ),
+                array(
+                'idReceita' => '3',
+                'idIngrediente' => '5',
+                'idUnidadeMedida' => '3',
+                'quantidade' => '2',
+                ),
+                array(
+                'idReceita' => '3',
+                'idIngrediente' => '7',
+                'idUnidadeMedida' => '8',
+                'quantidade' => '200',
+                ),
+                // CREPE MARMORE
+    
+                array(
+                'idReceita' => '4',
+                'idIngrediente' => '6',
+                'idUnidadeMedida' => '13',
+                'quantidade' => '250',
+                ),
+                array(
+                'idReceita' => '4',
+                'idIngrediente' => '9',
+                'idUnidadeMedida' => '6',
+                'quantidade' => '1',
+                ),
+                array(
+                'idReceita' => '4',
+                'idIngrediente' => '11',
+                'idUnidadeMedida' => '13',
+                'quantidade' => '80',
+                ),
+                array(
+                'idReceita' => '4',
+                'idIngrediente' => '12',
+                'idUnidadeMedida' => '7',
+                'quantidade' => '4',
+                ),
+        ));
     }
 
     /**

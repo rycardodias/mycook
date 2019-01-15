@@ -15,12 +15,9 @@
         @include('includes.navbar')
     </div>
 
-
-
         <section id="formulario">
 
             @include('posts.receitas.index')
-            <a href="/receitas/create">Criar Receita</a>
         </section>
     </section>
 
