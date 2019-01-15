@@ -17,19 +17,20 @@ class ReceitasController extends Controller
 
     public function filter($tipoID)
     {
-        $tipos=
+        $listatipos = tipoConsumidor::all();
+        $tipo=
             DB::table('receitas')
                 ->join('ingrediente_receitas', 'receitas.id', '=', 'ingrediente_receitas.idReceita')
                 ->join('origem_alimentos', 'ingrediente_receitas.idIngrediente', '=', 'origem_alimentos.id')
                 ->join('origem_tipos', 'origem_alimentos.id', '=', 'origem_tipos.idOrigemAlimento')
                 ->join('tipo_consumidors', "origem_tipos.idTipoConsumidor", '=', 'tipo_consumidors.id')
-                ->select('receitas.nome', 'receitas.created_at')
+                ->select('receitas.id','receitas.nome', 'receitas.created_at', 'tipo_consumidors.tipoConsumidor')
                 ->where('origem_tipos.idTipoConsumidor', '=', $tipoID)
                 ->get();
 
 
 
-        return view("posts.receitas.showfilters",compact('tipos'));
+        return view("posts.receitas.showfilters",compact('tipo','listatipos'));
     }
 
     public function index()

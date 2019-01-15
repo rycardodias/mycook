@@ -32,7 +32,7 @@
     <a href="/receitas/create">Criar Receita</a>
 
 @else
-    <p>Sem mensagens encontradas</p>
+    <p>Sem receitas encontradas</p>
 @endif
 </div>
 <div class="esquerda">
