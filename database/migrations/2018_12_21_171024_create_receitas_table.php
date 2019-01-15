@@ -23,7 +23,9 @@ class CreateReceitasTable extends Migration
             $table->unsignedInteger('idUtilizador');
             $table->foreign('idUtilizador')->references('id')->on('users');
             $table->timestamps();
+
         });
+
 
         DB::table('receitas')->insert(array(
             array(
@@ -67,6 +69,7 @@ class CreateReceitasTable extends Migration
                 'updated_at' => \Carbon\Carbon::now()
             ),
         ));
+
 
 
     }
