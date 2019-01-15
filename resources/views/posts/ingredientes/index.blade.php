@@ -8,7 +8,7 @@
         @foreach($lista as $lista)
             <p><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a>
         @endforeach
-
+                <a href="/ingredientes/create">Criar Receita</a>
 <h1>Lista de Ingredientes</h1>
 @if(count($ingredientes)>0)
     <table>
@@ -27,10 +27,11 @@
             </tr>
             @endforeach
         </table>
-    
+
 @else
-    <p>Sem mensagens encontradas</p>
+    <p>Sem Ingredientes encontrados</p>
 @endif
+    </div>
 </section>
 </div>
 <div class="esquerda">

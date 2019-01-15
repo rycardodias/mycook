@@ -13,7 +13,7 @@
         <ul class="categories">
 @foreach($listaorigem as $lista)
     <li>
-        <h3><a href="/tipo/{{$lista->id}}">{{$lista->origemAlimento}}</a></h3>
+        <h3><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a></h3>
     </li>
 @endforeach
 </ul>
@@ -25,7 +25,7 @@
     @foreach ($origem as $origem)
 
         <h5> Filtro {{$origem->origemAlimento}}</h5>
-            <h3><a href="/receitas/{{$origem->id}}">{{$origem->nome}}</a></h3>
+            <h3><a href="/ingredientes/{{$origem->id}}">{{$origem->nome}}</a></h3>
         <p>{{$origem->created_at}}
     @endforeach
 

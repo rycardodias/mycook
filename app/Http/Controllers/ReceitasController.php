@@ -20,6 +20,7 @@ class ReceitasController extends Controller
         $listatipos = tipoConsumidor::all();
 
         $tipo=
+
             DB::table('receitas')
                 ->join('ingrediente_receitas', 'receitas.id', '=', 'ingrediente_receitas.idReceita')
                 ->join('ingredientes', 'ingrediente_receitas.idIngrediente', '=', 'ingredientes.id')
@@ -28,6 +29,7 @@ class ReceitasController extends Controller
                 ->join('tipo_consumidors', "origem_tipos.idTipoConsumidor", '=', 'tipo_consumidors.id')
                 ->select('receitas.id','receitas.nome', 'receitas.created_at', 'tipo_consumidors.tipoConsumidor')
                 ->where('origem_tipos.idTipoConsumidor', '=', $tipoID)
+                ->distinct()
                 ->get();
 
 
@@ -93,6 +95,7 @@ class ReceitasController extends Controller
     public function show($id)
     {
         $receita = receita::find($id);
+
         return view('posts.receitas.show')->withReceita($receita);
     }
 

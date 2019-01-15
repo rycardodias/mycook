@@ -24,6 +24,7 @@ class IngredientesController extends Controller
                 ->join('origem_alimentos', 'ingredientes.idOrigem', '=', 'origem_alimentos.id')
                 ->join('origem_tipos', 'origem_alimentos.id', '=', 'origem_tipos.idOrigemAlimento')
                 ->select('ingredientes.id','ingredientes.nome', 'ingredientes.created_at','origem_alimentos.origemAlimento')
+                ->distinct()
                 ->where('origem_tipos.idOrigemAlimento', '=', $tipoID)
                 ->get();
 
@@ -37,7 +38,8 @@ class IngredientesController extends Controller
         $ingredientes=DB::table('ingredientes')
         ->join('origem_alimentos', 'ingredientes.idOrigem', '=', 'origem_alimentos.id')
         ->select('ingredientes.id','ingredientes.nome', 'ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
-        ->get();
+            ->orderBy('ingredientes.id')
+            ->get();
 
 
         $lista = origemAlimento::all();
@@ -54,7 +56,9 @@ class IngredientesController extends Controller
      */
     public function create()
     {
-        return view('posts.ingredientes.create');
+        $listatipos = origemAlimento::all();
+//
+        return view('posts.ingredientes.create')->with(['listatipos' => $listatipos]);
     }
 
     /**
@@ -67,9 +71,8 @@ class IngredientesController extends Controller
     {
         $this->validate($request, [
             'nome' => 'required',
-            'descricao' => 'required',
-            'idUtilizador' => 'required',
-            'idOrigem' => 'required'
+            'descricao' => 'required'
+
         ]);
         
         // Create Post
@@ -77,7 +80,7 @@ class IngredientesController extends Controller
         $ingrediente->nome = $request->input('nome');
         $ingrediente->descricao = $request->input('descricao');
         $ingrediente->idUtilizador = $request->input('idUtilizador');
-        $ingrediente->idOrigem = $request->input('idOrigem');
+        $ingrediente ->idOrigem = $request->input('alimento');
         $ingrediente->save();
 
         return redirect('/ingredientes')->with('success', 'Ingrediente atualizado');
@@ -91,7 +94,7 @@ class IngredientesController extends Controller
      */
     public function show($id)
     {
-       // $ingrediente = Ingrediente::find($id);
+
         $ingrediente=
             DB::table('ingredientes')
                 ->join('origem_alimentos', 'ingredientes.id', '=', 'origem_alimentos.id')
@@ -122,7 +125,7 @@ class IngredientesController extends Controller
         return view('posts.ingredientes.edit')->with(['ingrediente' => $ingrediente,'listatipos' => $listatipos ]);
 
 
-       // return view('posts.ingredientes.edit',compact('ingrediente','listatipos'));
+
     }
 
     /**
