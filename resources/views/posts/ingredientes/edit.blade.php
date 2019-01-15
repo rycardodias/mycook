@@ -18,17 +18,20 @@
             <p>{{Form::label('idUtilizador', 'idUtilizador')}}
             <p>{{Form::text('idUtilizador', $ingrediente->idUtilizador, ['class' => 'form-control', 'placeholder' => 'idUtilizador'])}}
         </div>
-        <div class="form-group">
-            <p>{{Form::label('idOrigem', 'idOrigem')}}
+        {{--<div class="form-group">--}}
+            {{--<p>{{Form::label('idOrigem', 'idOrigem')}}--}}
 
-            <p><select id="opcao">
-                    <option value="">Selecione a Origem do alimento</option>
-                    @foreach($listatipos as $lista)
-                <option value="{{$lista->id}}">{{$lista->origemAlimento}}</option>
-                    @endforeach
 
-            </select>
-        </div>
+                        <label for="alimento">Origem Do Alimento:</label><br>
+                 <p>       <select class="textWidth form-control" name="alimento" id="alimento" type="text">
+                            <option disabled selected> > Selecione a Origem do alimento  </option>
+            @foreach($listatipos as $lista)
+                                <option value="{{$lista->id}}">
+                                    {{$lista->origemAlimento}}
+                                </option>
+                            @endforeach
+                        </select>
+
 
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}

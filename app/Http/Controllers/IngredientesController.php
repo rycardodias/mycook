@@ -116,8 +116,8 @@ class IngredientesController extends Controller
         $this->validate($request, [
             'nome' => 'required',
             'descricao' => 'required',
-            'idUtilizador' => 'required',
-            'idOrigem' => 'required'
+            'idUtilizador' => 'required'
+
         ]);
         
         // Create Post
@@ -125,7 +125,7 @@ class IngredientesController extends Controller
         $ingrediente->nome = $request->input('nome');
         $ingrediente->descricao = $request->input('descricao');
         $ingrediente->idUtilizador = $request->input('idUtilizador');
-        $ingrediente->idOrigem = $request->opcao;
+        $ingrediente ->idOrigem = $request->input('alimento');
         $ingrediente->save();
 
         return redirect('ingredientes')->with('success', 'Ingrediente atualizado');
