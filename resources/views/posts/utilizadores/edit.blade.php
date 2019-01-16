@@ -18,13 +18,9 @@
             <p>{{Form::label('email', 'Email')}}
             <p>{{Form::text('email', $utilizador->email, [ 'class' => 'form-control', 'placeholder' => 'email'])}}
         </div>
-        <div class="form-group">
-
-            <p>{{Form::text('password', $utilizador->password, ['class' => 'form-control', 'placeholder' => 'password','style' => 'visibility: hidden;'])}}
-        </div>
-        <div class="form-group">
-        <p>{{Form::text('tipoUtilizador', $utilizador->tipoUtilizador, ['class' => 'form-control', 'placeholder' => 'tipoUtilizador','style' => 'visibility: hidden;'])}}
-    </div>
+            {{Form::text('password', $utilizador->password, ['class' => 'form-control', 'placeholder' => 'password','style' => 'visibility: hidden;'])}}
+            {{Form::text('tipoUtilizador', $utilizador->tipoUtilizador, ['class' => 'form-control', 'placeholder' => 'tipoUtilizador','style' => 'visibility: hidden;'])}}
+    
         <div class="form-group">
             <p>{{Form::text('estadoConta', $utilizador->estadoConta, ['class' => 'form-control', 'placeholder' => 'estadoConta','style' => 'visibility: hidden;'])}}
         </div>
@@ -38,7 +34,7 @@
             @endforeach
         </select>
 
-        <label for="faixa"> Faixa Etária:</label><br>
+        <p><label for="faixa"> Faixa Etária:</label><br>
     <p><select class="textWidth form-control" name="faixa" id="faixa" type="text">
             <option disabled selected> > Selecione a sua faixa Etária:</option>
             @foreach($listafaixa as $faixa)
@@ -48,7 +44,7 @@
             @endforeach
         </select>
 
-        <label for="atividade">Atividade Fisica:</label><br>
+        <p><label for="atividade">Atividade Fisica:</label><br>
     <p><select class="textWidth form-control" name="atividade" id="atividade" type="text">
             <option disabled selected> > Selecione a sua Atividade Fisica:</option>
             @foreach($listaatividade as $atividade)
@@ -57,7 +53,7 @@
                 </option>
             @endforeach
         </select>
-
+    <p>
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
 

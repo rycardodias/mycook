@@ -3,7 +3,7 @@
 <div class="nav">
         @include('includes.navbar')
 </div>
-<section>
+<section class="corpo">
 @foreach ($ingrediente as $ingrediente)
 
     <h1>{{$ingrediente->nome}}</h1>

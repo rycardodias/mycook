@@ -1,9 +1,10 @@
-@if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $receita->idUtilizador )
 <link rel="stylesheet" href="../css/menu.css">
 
 <div class="nav">
         @include('includes.navbar')
 </div>
+@if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $receita->idUtilizador )
+
 <section class="corpo" id="receitasEdit">
     @foreach ($receitas as $receita)
 <h1>Editar Receita</h1>
