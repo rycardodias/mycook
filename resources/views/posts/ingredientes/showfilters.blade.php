@@ -26,6 +26,7 @@
 
         <h5> Filtro {{$origem->origemAlimento}}</h5>
             <h3><a href="/ingredientes/{{$origem->id}}">{{$origem->nome}}</a></h3>
+            <h3>{{$origem->nome}}</h3>
         <p>{{$origem->created_at}}
     @endforeach
 

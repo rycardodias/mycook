@@ -24,7 +24,7 @@ class IngredientesController extends Controller
             DB::table('ingredientes')
                 ->join('origem_alimentos', 'ingredientes.idOrigem', '=', 'origem_alimentos.id')
                 ->join('origem_tipos', 'origem_alimentos.id', '=', 'origem_tipos.idOrigemAlimento')
-                ->select('ingredientes.id','ingredientes.nome', 'ingredientes.created_at','origem_alimentos.origemAlimento')
+                ->select('ingredientes.id','ingredientes.nome','ingredientes.descricao', 'ingredientes.created_at','origem_alimentos.origemAlimento')
                 ->distinct()
                 ->where('origem_tipos.idOrigemAlimento', '=', $tipoID)
                 ->get();
