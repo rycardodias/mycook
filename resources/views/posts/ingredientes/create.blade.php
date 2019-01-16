@@ -14,7 +14,7 @@
 </div>
 <div class="form-group">
     <p>{{Form::label('descricao', 'descricao')}}
-    <p>{{Form::text('descricao', '', [ 'class' => 'form-control', 'placeholder' => 'descricao'])}}
+    <p>{{Form::textarea('descricao', '', [ 'class' => 'form-control', 'placeholder' => 'descricao', 'rows'=>'2'])}}
 </div>
 
         <p>{{Form::text('idUtilizador', Auth::user()->id , ['class' => 'form-control', 'placeholder' => 'idUtilizador','style' => 'visibility: hidden;'])}}

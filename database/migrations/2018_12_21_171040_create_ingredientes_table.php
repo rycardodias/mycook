@@ -234,14 +234,7 @@ class CreateIngredientesTable extends Migration
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ),
-            array(
-                'nome' => 'Poupa de Tomate',
-                'descricao' => 'Poupa de tomate doce',
-                'idUtilizador' => '1',
-                'idOrigem' => '3',
-                'created_at' => \Carbon\Carbon::now(),
-                'updated_at' => \Carbon\Carbon::now()
-            ),
+           
 
 
         ));

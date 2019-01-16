@@ -14,15 +14,15 @@
     </div>
     <div class="form-group">
         <p>{{Form::label('resumo', 'resumo')}}
-        <p>{{Form::text('resumo', $receita->resumo, [ 'class' => 'form-control', 'placeholder' => 'resumo'])}}
+        <p>{{Form::text('resumo', $receita->resumo, [ 'class' => 'form-control', 'placeholder' => 'resumo', 'rows'=>'2'])}}
     </div>
     <div class="form-group">
         <p>{{Form::label('detalhes', 'detalhes')}}
-        <p>{{Form::text('detalhes', $receita->detalhes, [ 'class' => 'form-control', 'placeholder' => 'detalhes'])}}
+        <p>{{Form::text('detalhes', $receita->detalhes, [ 'class' => 'form-control', 'placeholder' => 'detalhes', 'rows'=>'2'])}}
     </div>
     <div class="form-group">
         <p>{{Form::label('nPassos', 'nPassos')}}
-        <p>{{Form::text('nPassos', $receita->nPassos, ['class' => 'form-control', 'placeholder' => 'nPassos'])}}
+        <p>{{Form::text('nPassos', $receita->nPassos, ['class' => 'form-control', 'placeholder' => 'nPassos', 'rows'=>'2'])}}
     </div>
     <div class="form-group">
         <p>{{Form::label('nPessoas', 'nPessoas')}}

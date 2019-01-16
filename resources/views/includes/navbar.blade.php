@@ -104,6 +104,8 @@
         <a href="/">Início</a> 
         <a href="/sobre">Sobre</a>
         <a  href="/contactos">Contactos</a> |
+        <a href="/receitas">Receitas</a>
+        <a href="/ingredientes">Ingredientes</a>
         <a id="pagAtual" href="">Minha Conta</a>
         @yield('botaoLogout')
     </div>
