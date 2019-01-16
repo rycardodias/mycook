@@ -25,12 +25,10 @@
         
         @foreach ($tipo as $tipo)
                 <h3><a href="/receitas/{{$tipo->id}}">{{$tipo->nome}}</a></h3>
-            <p>{{$tipo->created_at}}
         @endforeach
         @else
             <p>Sem receitas encontradas</p>
         @endif
-            <a href="/receitas/create">Criar Receita</a>
     </div>
 </section>
 <footer id="rodape">

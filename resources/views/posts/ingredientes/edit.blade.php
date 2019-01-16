@@ -13,7 +13,7 @@
     </div>
     <div class="form-group">
         <p>{{Form::label('descricao', 'Descricao')}}
-        <p>{{Form::text('descricao', $ingrediente->descricao, [ 'class' => 'form-control', 'placeholder' => 'Descricao'])}}
+        <p>{{Form::textarea('descricao', $ingrediente->descricao, [ 'class' => 'form-control', 'placeholder' => 'Descricao', 'rows'=>'2'])}}
     </div>
     <label for="utilizador">Insere o Utilizador:</label><br>
     <p><select class="textWidth form-control" name="utilizador" id="utilizador" type="text">

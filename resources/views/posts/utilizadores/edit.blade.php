@@ -1,3 +1,9 @@
+<link rel="stylesheet" href="../css/menu.css">
+
+<div class="nav">
+    @include('includes.navbar')
+</div>
+
 @foreach ($utilizador as $utilizador)
 
 @if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $utilizador->id )
@@ -9,11 +15,10 @@
             <p>{{Form::text('name', $utilizador->name, ['class' => 'form-control', 'placeholder' => 'Nome'])}}
         </div>
         <div class="form-group">
-            <p>{{Form::label('email', 'Descricao')}}
+            <p>{{Form::label('email', 'Email')}}
             <p>{{Form::text('email', $utilizador->email, [ 'class' => 'form-control', 'placeholder' => 'email'])}}
         </div>
         <div class="form-group">
-            <p>{{Form::label('password', 'password')}}
             <p>{{Form::text('password', $utilizador->password, ['class' => 'form-control', 'placeholder' => 'password'])}}
         </div>
         <div class="form-group">
@@ -62,3 +67,7 @@
     <p>Sabes bem que não devias estar Aqui !</p>
 @endif
 @endforeach
+
+<footer id="rodape">
+    @include('includes.footer')
+</footer>
