@@ -11,7 +11,7 @@
             <h3>Tipo Consumidor</h3>
             <div class="opcao">
                 @foreach($listatipos as $lista)
-                    <h3><a href="/tipo/{{$lista->id}}">{{$lista->tipoConsumidor}}</a></h3>  
+                    <p><a href="/tipo/{{$lista->id}}">{{$lista->tipoConsumidor}}</a>
                 @endforeach
             </div>
         </div>

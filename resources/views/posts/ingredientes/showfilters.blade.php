@@ -10,15 +10,15 @@
             <h3>Origem Ingredientes</h3>
             <div class="opcao">
             @foreach($listaorigem as $lista)
-                <h3><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a></h3>
+                <p><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a>
             @endforeach
             </div>
         </div>
+        <p><a href="/ingredientes/create">Criar Ingrediente</a>
+
     </div>
-<<<<<<< HEAD
     <div class="direita">
     <h1>Lista de Ingredientes</h1>
-        <p><a href="/ingredientes/create">Criar Ingrediente</a>
         <table>
             <tr>
                 <th>Ingrediente</th>
@@ -29,23 +29,13 @@
             @foreach ($origem as $origem)
                 <tr id="lista">
                     <td><a href="/ingredientes/{{$origem->id}}">{{$origem->nome}}</a></td>
+                    <td>{{$origem->descricao}}</td>
+                    <td>{{$origem->origemAlimento}}</td>
+
+
                 </tr>
         @endforeach
         </table>
-=======
-    </div>
-
-<section class="corpo" id="receitasShow">
-    @if(!empty($origem))
-    @foreach ($origem as $origem)
-
-        <h5> Filtro {{$origem->origemAlimento}}</h5>
-            <h3><a href="/ingredientes/{{$origem->id}}">{{$origem->nome}}</a></h3>
-            <h3>{{$origem->nome}}</h3>
-        <p>{{$origem->created_at}}
-    @endforeach
-
->>>>>>> ced036f93edc8d68563128115d7f8033499c2efd
         @else
             <p>Sem receitas encontradas</p>
         @endif
