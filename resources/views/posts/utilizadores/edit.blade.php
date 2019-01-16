@@ -19,7 +19,8 @@
             <p>{{Form::text('email', $utilizador->email, [ 'class' => 'form-control', 'placeholder' => 'email'])}}
         </div>
         <div class="form-group">
-            <p>{{Form::text('password', $utilizador->password, ['class' => 'form-control', 'placeholder' => 'password'])}}
+            
+            <p>{{Form::text('password', $utilizador->password, ['class' => 'form-control', 'placeholder' => 'password','style' => 'visibility: hidden;'])}}
         </div>
         <div class="form-group">
         <p>{{Form::text('tipoUtilizador', $utilizador->tipoUtilizador, ['class' => 'form-control', 'placeholder' => 'tipoUtilizador','style' => 'visibility: hidden;'])}}
@@ -61,7 +62,7 @@
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
 
     {!! Form::close() !!}
-    
+
 
 @else
     <p>Sabes bem que não devias estar Aqui !</p>
