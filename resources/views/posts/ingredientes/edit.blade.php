@@ -79,7 +79,7 @@
                 </option>
             @endforeach
         </select>
-
+<br><br>
     <label for="alimento">Origem Do Alimento:</label><br>
     <p><select class="textWidth form-control" name="alimento" id="alimento" type="text">
             <option disabled selected> > Selecione a Origem do alimento</option>

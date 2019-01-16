@@ -13,8 +13,8 @@
     <a  href="/" id="titulo">MyCook - Make life delicious</a>
     <div class="menu">
         <a id="pagAtual" href="/">Início</a> 
-        <a href="sobre">Sobre</a>
-        <a href="contactos">Contactos</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/contactos">Contactos</a>
         @yield('botaoLogout')
     </div>
     </div>
@@ -28,8 +28,8 @@
                 |
             @endif
         <a  href="/">Início</a> 
-        <a href="sobre">Sobre</a>
-        <a href="contactos">Contactos</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/contactos">Contactos</a>
         |
         <a  href="/receitas">Receitas</a>
         <a  href="/ingredientes">Ingredientes</a> 

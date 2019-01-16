@@ -1,5 +1,5 @@
 <style>
-    
+
     html {
         font-family: "helvetica neue", sans-serif;
     }
@@ -27,14 +27,14 @@
         border-bottom: 1px solid #EAEAEB;
         text-align: right;
         height: 70px;
-        line-height: 70px;  
+        line-height: 70px;
     }
 
     footer {
         text-align: center;
         border-top: 1px solid #EAEAEB;
         bottom: 0;
-        
+
     }
 
     footer p{
@@ -72,7 +72,6 @@
     </div>
 </div>
 
-@if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $receita->idUtilizador )
 <section class="corpo" id="receitasEdit">
     @foreach ($receitas as $receita)
 <h1>Editar Receita</h1>
@@ -113,15 +112,9 @@
 
 {!! Form::close() !!}
 
-{!!Form::open(['action' => ['ReceitasController@destroy', $receita->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
-    {{Form::hidden('_method', 'DELETE')}}
-    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-{!!Form::close()!!}
+
 </section>
 @endforeach
 <footer id="rodape">
     @include('includes.footer')
 </footer>
-@else
-    <p>Sabes bem que não devias estar Aqui !</p>
-@endif

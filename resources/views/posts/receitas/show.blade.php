@@ -12,10 +12,7 @@
 
             @if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $receita->idUtilizador )
                 <a href="/receitas/{{$receita->id}}/edit" class="btn btn-default">Editar</a>
-        {!!Form::open(['action' => ['ReceitasController@destroy', $receita->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
-        {{Form::hidden('_method', 'DELETE')}}
-        {{Form::submit('Eliminar', ['class' => 'btn btn-danger'])}}
-        {!!Form::close()!!}
+
         @endif
     </div>
 
