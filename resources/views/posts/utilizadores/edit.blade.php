@@ -56,11 +56,7 @@
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
 
     {!! Form::close() !!}
-
-    {!!Form::open(['action' => ['UtilizadoresController@destroy', $utilizador->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
-        {{Form::hidden('_method', 'DELETE')}}
-        {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-    {!!Form::close()!!}
+    
 
 @else
     <p>Sabes bem que não devias estar Aqui !</p>
