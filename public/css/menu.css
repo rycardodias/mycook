@@ -46,6 +46,7 @@ footer {
     text-align: center;
     border-top: 1px solid #EAEAEB;
     bottom: 0;
+    
 }
 
 footer p{
@@ -137,6 +138,33 @@ hgroup#redesSociais a:hover {
 }
 
 .corpo#receitasIndex .direita a {
+    color: black;
+
+}
+
+/* RECEITAS@FILTER */
+
+.corpo#showfilter .esquerda {
+    width: 25%;
+    float: left;
+}
+
+.corpo#showfilter .esquerda .filtroTipoConsumidor{
+   
+}
+
+.corpo#showfilter .esquerda .opcao a{
+   padding-left: 20px;
+   color: black;
+   text-decoration: none;
+}
+
+.corpo#showfilter .direita {
+    width: 75%;
+    float: right;
+}
+
+.corpo#showfilter .direita a {
     color: black;
 
 }
@@ -250,12 +278,16 @@ hgroup#redesSociais a:hover {
     text-decoration: none;
 }
 
+.corpo#ingredientesIndex .direita a{
+    color: black;
+}
 .corpo#ingredientesIndex .direita {
     width: 75%;
     float: right;
 }
 
 .corpo#ingredientesIndex .direita table{
+    padding-top: 10px;
     border-collapse: collapse;
     width: 100%;
 }

@@ -17,9 +17,13 @@
         </div>
     </div>
     <div class="direita">
+    <div class="topoReceitas">
+            <h1>Lista de Receitas</h1>
+            <a href="/receitas/create">Criar Receita</a>
+        </div>
         @if(!empty($tipo))
+        
         @foreach ($tipo as $tipo)
-            <h5> Filtro {{$tipo->tipoConsumidor}}</h5>
                 <h3><a href="/receitas/{{$tipo->id}}">{{$tipo->nome}}</a></h3>
             <p>{{$tipo->created_at}}
         @endforeach

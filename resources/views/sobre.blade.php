@@ -21,7 +21,7 @@
                 suspendisse nisl netus condimentum aliquam turpis id adipiscing. bibendum neque dictumst sed tristique praesent faucibus velit faucibus cubilia tristique et, per condimentum orci praesent mattis felis non habitant vestibulum. 
             </div>  
             <div class="direita">
-                <img src="#" >
+            <img src="img/foto2.jpg">
             </div>  
             </section>
     </section>

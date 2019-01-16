@@ -61,6 +61,7 @@
                     <div class="loginLigado">
                         <h1> Bem Vindo ao MyCook </h1>
                         <p>A equipa do MyCook deseja-lhe uma excelente experiencia no uso da aplicação! Divirta-se a cozinhar!
+                        <img src="img/foto2.jpg">
                     </div>
                 @endif
             </div>

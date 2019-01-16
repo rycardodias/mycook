@@ -12,12 +12,13 @@
             @foreach($lista as $lista)
                 <p><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a>
             @endforeach
-                <p><a href="/ingredientes/create">Criar Receita</a>
         </div>
     </div>
     </div>
     <div class="direita">
         <h1>Lista de Ingredientes</h1>
+        <p><a href="/ingredientes/create">Criar Ingrediente</a>
+
         @if(count($ingredientes)>0)
             <table>
                 <tr>
@@ -44,6 +45,3 @@
 </div>
 
 
-<footer id="rodape">
-    @include('includes.footer')
-</footer> 
