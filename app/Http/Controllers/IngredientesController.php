@@ -18,7 +18,7 @@ class IngredientesController extends Controller
      */
     public function filter($tipoID)
     {
-        $listaorigem = origemTipo::all();
+        $listaorigem = origemAlimento::all();
 
         $origem=
             DB::table('ingredientes')

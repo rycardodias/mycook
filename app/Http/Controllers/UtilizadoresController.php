@@ -15,8 +15,19 @@ class UtilizadoresController extends Controller
      */
     public function index()
     {
-        $utilizador = user::all();
-        return view('posts.utilizadores.index')->withUtilizador($utilizador);
+
+        $utilizador=DB::table('users')
+            ->join('faixa_etarias', 'faixa_etarias.id', '=', 'users.faixaEtaria')
+            ->join('tipo_utilizadors', 'tipo_utilizadors.id', '=', 'users.tipoUtilizador')
+             ->join('atividade_fisicas', 'atividade_fisicas.id', '=', 'users.atividadeFisica')
+            ->join('estado_contas', 'estado_contas.id', '=', 'users.estadoConta')
+            ->join('sexos', 'sexos.id', '=', 'users.sexo')
+            ->select('users.id','users.name', 'users.email','users.email','tipo_utilizadors.tipoUtilizador','estado_contas.estadoConta','sexos.sexo','faixa_etarias.faixaEtaria','atividade_fisicas.nivelAtividade')
+            ->orderBy('users.id')
+            ->get();
+
+
+        return view('posts.utilizadores.index',compact('utilizador'));
 
     }
 

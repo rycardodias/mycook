@@ -12,6 +12,7 @@
         <th>Email</th>
         <th>Tipo de Utilizador</th>
         <th>Estado do Utilizador</th>
+        <th>Sexo do User</th>
         <th>Faixa Etária</th>
         <th>Atividade Física</th>
         <th>Editar User</th>
@@ -21,9 +22,10 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->tipoUtilizador}}</td>
-            <td>{{$user->estadoUtilizador}}</td>
+            <td>{{$user->estadoConta}}</td>
+            <td>{{$user->sexo}}</td>
             <td>{{$user->faixaEtaria}}</td>
-            <td>{{$user->atividadeFisica}}</td>
+            <td>{{$user->nivelAtividade}}</td>
             <td><a href="/myaccount/{{$user->id}}/edit" class="btn btn-default">Editar Perfil</a></td>
         </tr>
     @endforeach
