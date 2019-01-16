@@ -13,7 +13,7 @@
             <p>{{Form::text('email', $utilizador->email, [ 'class' => 'form-control', 'placeholder' => 'email'])}}
         </div>
         <div class="form-group">
-            
+
             <p>{{Form::text('password', $utilizador->password, ['class' => 'form-control', 'placeholder' => 'password','style' => 'visibility: hidden;'])}}
         </div>
         <div class="form-group">
