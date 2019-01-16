@@ -7,12 +7,14 @@
 @foreach ($ingrediente as $ingrediente)
 
     <h1>{{$ingrediente->nome}}</h1>
-    
+        <p><h4> Descrição</h4>
         <p>{{$ingrediente->descricao}}
+        <p><h4> Origem do Alimento </h4>
         <p>{{$ingrediente->origemAlimento}}
-        <p>{{$ingrediente->name}}
+
+        <p><h4> Criada em</h4>
         <p>{{$ingrediente->created_at}}
-        <p>{{$ingrediente->updated_at}}
+
 
         @endforeach
 

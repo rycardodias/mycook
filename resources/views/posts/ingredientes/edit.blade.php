@@ -1,4 +1,59 @@
-@if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $receita->idUtilizador )
+<style>
+
+    html {
+        font-family: "helvetica neue", sans-serif;
+    }
+    .menu {
+        margin: 0 30px 0 0;
+    }
+
+    .menu a {
+        clear: right;
+        text-decoration: none;
+        color: gray;
+        margin: 0 10px;
+        line-height: 70px;
+    }
+
+    a#titulo {
+        position: absolute;
+        left: 20px;
+        color: gray;
+        font-size: 18px;
+        text-transform:uppercase;
+        text-decoration: none;
+    }
+    .nav {
+        border-bottom: 1px solid #EAEAEB;
+        text-align: right;
+        height: 70px;
+        line-height: 70px;
+    }
+
+    footer {
+        text-align: center;
+        border-top: 1px solid #EAEAEB;
+        bottom: 0;
+
+    }
+
+    footer p{
+        text-transform:full-width;
+        margin: 5px auto -15px auto;
+    }
+    hgroup#redesSociais a {
+        text-decoration: none;
+        color:grey;
+        text-transform:full-width;
+        font-size: 14px;
+    }
+    hgroup#redesSociais a:hover {
+        color: coral;
+    }
+    a#pagAtual {
+        color:coral;
+    }
+</style>
 <link rel="stylesheet" href="../css/menu.css">
 
 <div class="nav">
@@ -41,14 +96,8 @@
 
         {!! Form::close() !!}
 
-        {!!Form::open(['action' => ['IngredientesController@destroy', $ingrediente->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
-        {{Form::hidden('_method', 'DELETE')}}
-        {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-        {!!Form::close()!!}
+
         @endforeach
         <footer id="rodape">
             @include('includes.footer')
         </footer>
-    @else
-        <p>Sabes bem que não devias estar Aqui !</p>
-    @endif

@@ -36,7 +36,7 @@ class CreateIngredientesTable extends Migration
             array(
                 'nome' => 'Bife de vaca',
                 'descricao' => 'Bife de vaca',
-                'idUtilizador' => '1',
+                'idUtilizador' => '2',
                 'idOrigem' => '2',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
@@ -52,7 +52,7 @@ class CreateIngredientesTable extends Migration
             array(
                 'nome' => 'Leite',
                 'descricao' => 'Leite meio gordo',
-                'idUtilizador' => '1',
+                'idUtilizador' => '2',
                 'idOrigem' => '8',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
@@ -60,7 +60,7 @@ class CreateIngredientesTable extends Migration
             array(
                 'nome' => 'Cebola',
                 'descricao' => 'Cebola galega',
-                'idUtilizador' => '1',
+                'idUtilizador' => '2',
                 'idOrigem' => '3',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
@@ -68,7 +68,7 @@ class CreateIngredientesTable extends Migration
             array(
                 'nome' => 'Farinha',
                 'descricao' => 'Farinha branca de neve',
-                'idUtilizador' => '1',
+                'idUtilizador' => '2',
                 'idOrigem' => '3',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
@@ -84,7 +84,7 @@ class CreateIngredientesTable extends Migration
             array(
                 'nome' => 'Queijo',
                 'descricao' => 'Queijo de vaca',
-                'idUtilizador' => '1',
+                'idUtilizador' => '2',
                 'idOrigem' => '4',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
@@ -92,7 +92,7 @@ class CreateIngredientesTable extends Migration
             array(
                 'nome' => 'Sal',
                 'descricao' => 'Sal grosso',
-                'idUtilizador' => '1',
+                'idUtilizador' => '2',
                 'idOrigem' => '1',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
@@ -100,7 +100,7 @@ class CreateIngredientesTable extends Migration
             array(
                 'nome' => 'Azeite',
                 'descricao' => 'Azeite de oliva',
-                'idUtilizador' => '1',
+                'idUtilizador' => '2',
                 'idOrigem' => '1',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()

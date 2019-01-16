@@ -43,6 +43,12 @@ class CreateUsersTable extends Migration
             'password' => '$2y$10$VjENQyiI0iVDFFpokJNyM.EDKJ5gQ5Md4uClFTVYa7CnkV8kt7Egu',
             'tipoUtilizador' => '3',
             ),
+            array(
+                'name' => 'TesteUser',
+                'email' => 'teste@gmail.com',
+                'password' => '$2y$10$VjENQyiI0iVDFFpokJNyM.EDKJ5gQ5Md4uClFTVYa7CnkV8kt7Egu',
+                'tipoUtilizador' => '1',
+            ),
         ));
     }
 

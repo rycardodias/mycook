@@ -29,7 +29,7 @@ class CreateReceitasTable extends Migration
 
         DB::table('receitas')->insert(array(
             array(
-                'nome' => 'Bacalhau com Natas',
+                'nome' => 'Comida Vegan',
                 'resumo' => 'Um dos pratos mais conhecidos de bacalhau é sem dúvida o Bacalhau com Natas. O PetitChef decidiu fazer esta delícia da culinária Portuguesa, não deixe de fazer, é bem simples assim.',
                 'nPassos' => 'Levar o leite a ferver. Quando ferver, juntar as postas de bacalhau já demolhadas. Refogar as cebolas em azeite quente. Lavar, descascar e cortar as batatas em cubos. Fritar em azeite quente.',
                 'detalhes' => 'O Bacalhau com Natas é uma receita bla bla bla bla bla pardais ao ninh.',
