@@ -45,6 +45,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('gerirtickets', 'MensagensController')->middleware('auth');
 
+Route::resource('ir', 'ingredientes_receitasController')->middleware('auth');
+
 Route::resource('gerirusers', 'UtilizadoresController')->middleware('auth');
 
 Route::resource('receitas', 'ReceitasController')->middleware('auth');

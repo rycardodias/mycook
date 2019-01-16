@@ -17,6 +17,8 @@ class CreateIngredienteReceitasTable extends Migration
                 $table->unsignedInteger('idReceita');
                 $table->unsignedInteger('idIngrediente');
                 $table->unsignedInteger('idUnidadeMedida');
+            $table->timestamps();
+
             $table->foreign('idReceita')->references('id')->on('receitas');
             $table->foreign('idIngrediente')->references('id')->on('ingredientes');
             $table->foreign('idUnidadeMedida')->references('id')->on('unidade_medidas');

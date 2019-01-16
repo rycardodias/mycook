@@ -26,7 +26,7 @@
                 <div class="well">
                     <li><h3><a href="/receitas/{{$receita->id}}">{{$receita->nome}}</a></h3>
                     <small>{{$receita->resumo}}</small></li>
-                    
+
                 </div>
             @endforeach
             </ul>
@@ -46,6 +46,8 @@
     </div>
 </section>
 
+
+{{--javascript search--}}
 
 <script>
     function myFunction() {

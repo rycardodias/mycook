@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\ingredienteReceita;
 use Illuminate\Http\Request;
 use App\receita;
 use App\user;
 use App\tipoConsumidor;
 use DB;
+use Session;
 
 class ReceitasController extends Controller
 {
@@ -95,9 +97,21 @@ class ReceitasController extends Controller
      */
     public function show($id)
     {
+        $ingrediente_receitas = DB::table('ingrediente_receitas')
+            ->join('receitas', 'receitas.id', '=', 'ingrediente_receitas.idReceita')
+            ->join('ingredientes', 'ingredientes.id', '=', 'ingrediente_receitas.idIngrediente')
+            ->join('unidade_medidas', 'unidade_medidas.id', '=', 'ingrediente_receitas.idUnidadeMedida')
+            ->select('ingredientes.nome', 'unidade_medidas.unidadeMedida', 'ingrediente_receitas.quantidade')
+            ->where('ingrediente_receitas.idReceita', '=', $id)
+            ->get();
+
+// session para ingredientes_receitas
+        Session::put('receitaID', $id);
+
         $receita = receita::find($id);
 
-        return view('posts.receitas.show')->withReceita($receita);
+
+        return view('posts.receitas.show')->with(['receita' => $receita,'ingrediente_receitas' => $ingrediente_receitas]);
     }
 
     /**

@@ -179,3 +179,44 @@
 </div>
 @endif
 
+@if(Request::url() === $variavel . '/gerirusers')
+    <div class="nav">
+        <a  href="/" id="titulo">MyCook - Make life delicious</a>
+        <div class="menu">
+            @if (Auth::user()->tipoUtilizador=='3')
+                <a id="pagAtual"href="/gerirusers">Utilizadores</a>
+                <a href="/gerirtickets">Mensagens</a>
+                |
+            @endif
+            <a href="/">Início</a>
+            <a href="/sobre">Sobre</a>
+            <a  href="/contactos">Contactos</a> |
+            <a href="/receitas">Receitas</a>
+            <a href="/ingredientes">Ingredientes</a>
+                <a href="/myaccount/{{ Auth::user()->id }}">Minha Conta</a>
+            @yield('botaoLogout')
+        </div>
+    </div>
+@endif
+
+@if(Request::url() === $variavel . '/gerirtickets')
+    <div class="nav">
+        <a  href="/" id="titulo">MyCook - Make life delicious</a>
+        <div class="menu">
+            @if (Auth::user()->tipoUtilizador=='3')
+                <a href="/gerirusers">Utilizadores</a>
+                <a id="pagAtual" href="/gerirtickets">Mensagens</a>
+                |
+            @endif
+            <a href="/">Início</a>
+            <a href="/sobre">Sobre</a>
+            <a  href="/contactos">Contactos</a> |
+            <a href="/receitas">Receitas</a>
+            <a href="/ingredientes">Ingredientes</a>
+                <a href="/myaccount/{{ Auth::user()->id }}">Minha Conta</a>
+            @yield('botaoLogout')
+        </div>
+    </div>
+@endif
+
+
