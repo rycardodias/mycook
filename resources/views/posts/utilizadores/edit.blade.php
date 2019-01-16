@@ -1,5 +1,7 @@
-@if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $receita->idUtilizador )
-    @foreach ($utilizador as $utilizador)
+@foreach ($utilizador as $utilizador)
+
+@if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $utilizador->id )
+
     <h1>Editar Utilizador</h1>
     {!! Form::open(['action' => ['UtilizadoresController@update', $utilizador->id], 'method' => 'POST']) !!}
         <div class="form-group">
@@ -59,7 +61,8 @@
         {{Form::hidden('_method', 'DELETE')}}
         {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
     {!!Form::close()!!}
-    @endforeach
+
 @else
     <p>Sabes bem que não devias estar Aqui !</p>
 @endif
+@endforeach
