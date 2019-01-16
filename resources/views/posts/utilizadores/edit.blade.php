@@ -1,4 +1,4 @@
-
+@if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $receita->idUtilizador )
     <h1>Editar Utilizador</h1>
     {!! Form::open(['action' => ['UtilizadoresController@update', $utilizador->id], 'method' => 'POST']) !!}
         <div class="form-group">
@@ -14,12 +14,12 @@
             <p>{{Form::text('password', $utilizador->password, ['class' => 'form-control', 'placeholder' => 'password'])}}
         </div>
         <div class="form-group">
-            <p>{{Form::label('tipoUtilizador', 'tipoUtilizador')}}
-            <p>{{Form::text('tipoUtilizador', $utilizador->tipoUtilizador, ['class' => 'form-control', 'placeholder' => 'tipoUtilizador'])}}
-        </div>
+        <p>{{Form::label('tipoUtilizador', 'tipoUtilizador')}}
+        <p>{{Form::text('tipoUtilizador', $utilizador->tipoUtilizador, ['class' => 'form-control', 'placeholder' => 'tipoUtilizador','style' => 'visibility: hidden;'])}}
+    </div>
         <div class="form-group">
             <p>{{Form::label('estadoConta', 'estadoConta')}}
-            <p>{{Form::text('estadoConta', $utilizador->estadoConta, ['class' => 'form-control', 'placeholder' => 'estadoConta'])}}
+            <p>{{Form::text('estadoConta', $utilizador->estadoConta, ['class' => 'form-control', 'placeholder' => 'estadoConta','style' => 'visibility: hidden;'])}}
         </div>
         <div class="form-group">
             <p>{{Form::label('sexo', 'sexo')}}
@@ -43,3 +43,7 @@
         {{Form::hidden('_method', 'DELETE')}}
         {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
     {!!Form::close()!!}
+
+@else
+    <p>Sabes bem que não devias estar Aqui !</p>
+@endif
