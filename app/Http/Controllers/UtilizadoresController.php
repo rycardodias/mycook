@@ -105,7 +105,7 @@ class UtilizadoresController extends Controller
      */
     public function edit($id)
     {
-        $listafaixas = faixaEtaria::all();
+        $listafaixa = faixaEtaria::all();
         $listaatividade = atividadeFisica::all();
         $listasexo = sexo::all();
 
@@ -115,12 +115,12 @@ class UtilizadoresController extends Controller
             ->join('atividade_fisicas', 'atividade_fisicas.id', '=', 'users.atividadeFisica')
             ->join('estado_contas', 'estado_contas.id', '=', 'users.estadoConta')
             ->join('sexos', 'sexos.id', '=', 'users.sexo')
-            ->select('users.id','users.name', 'users.email','users.email','tipo_utilizadors.tipoUtilizador','estado_contas.estadoConta','sexos.sexo','faixa_etarias.faixaEtaria','atividade_fisicas.nivelAtividade')
+            ->select('users.id','users.name', 'users.email','users.password','users.tipoUtilizador','users.estadoConta','sexos.sexo','faixa_etarias.faixaEtaria','atividade_fisicas.nivelAtividade')
             ->where('users.id', '=', $id)
             ->get();
 
 
-        return view('posts.utilizadores.edit')->with(['utilizador' => $utilizador,'listafaixas' => $listafaixas,'listaatividade' => $listaatividade,'listasexo' => $listasexo]);
+        return view('posts.utilizadores.edit')->with(['utilizador' => $utilizador,'listafaixa' => $listafaixa,'listaatividade' => $listaatividade,'listasexo' => $listasexo]);
     }
 
     /**
@@ -146,11 +146,11 @@ class UtilizadoresController extends Controller
         $utilizador->tipoUtilizador = $request->input('tipoUtilizador');
         $utilizador->estadoConta = $request->input('estadoConta');
         $utilizador->sexo = $request->input('sexo');
-        $utilizador->faixaEtaria = $request->input('faixaEtaria');
-        $utilizador->atividadeFisica = $request->input('atividadeFisica');
+        $utilizador->faixaEtaria = $request->input('faixa');
+        $utilizador->atividadeFisica = $request->input('atividade');
         $utilizador->save();
 
-        return redirect('myaccount')->with('success', 'receita atualizado');
+        return redirect('/')->with('success', 'receita atualizado');
     }
 
     /**

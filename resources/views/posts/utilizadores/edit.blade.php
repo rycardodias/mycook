@@ -20,9 +20,9 @@
         <div class="form-group">
             <p>{{Form::text('estadoConta', $utilizador->estadoConta, ['class' => 'form-control', 'placeholder' => 'estadoConta','style' => 'visibility: hidden;'])}}
         </div>
-    <label for="sexo">Selecione o seu sexo:</label><br>
+    <label for="sexo">Sexo:</label><br>
     <p><select class="textWidth form-control" name="sexo" id="sexo" type="text">
-            <option disabled selected> > Selecione a Origem do alimento</option>
+            <option disabled selected> > Selecione o seu sexo:</option>
             @foreach($listasexo as $sexo)
                 <option value="{{$sexo->id}}">
                     {{$sexo->sexo}}
@@ -30,19 +30,19 @@
             @endforeach
         </select>
 
-        <label for="faixa">Selecione a sua faixa Etária:</label><br>
+        <label for="faixa"> Faixa Etária:</label><br>
     <p><select class="textWidth form-control" name="faixa" id="faixa" type="text">
-            <option disabled selected> > Selecione a Origem do alimento</option>
-            @foreach($listafaixas as $faixa)
+            <option disabled selected> > Selecione a sua faixa Etária:</option>
+            @foreach($listafaixa as $faixa)
                 <option value="{{$faixa->id}}">
                     {{$faixa->faixaEtaria}}
                 </option>
             @endforeach
         </select>
 
-        <label for="atividade">Selecione a sua Atividade Fisica:</label><br>
+        <label for="atividade">Atividade Fisica:</label><br>
     <p><select class="textWidth form-control" name="atividade" id="atividade" type="text">
-            <option disabled selected> > Selecione a Origem do alimento</option>
+            <option disabled selected> > Selecione a sua Atividade Fisica:</option>
             @foreach($listaatividade as $atividade)
                 <option value="{{$atividade->id}}">
                     {{$atividade->nivelAtividade}}
