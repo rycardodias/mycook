@@ -78,19 +78,20 @@ class UtilizadoresController extends Controller
      */
     public function show($id)
     {
-        $utilizador = user::find($id);
 
-//        $utilizador=
-//            DB::table('users')
-//                ->join('tipo_utilizador', 'tipo_utilizador.id', '=', 'users.tipoUtilizador')
-//                ->join('faixa_etarias', 'faixa_etarias.id', '=', 'users.faixaEtaria')
-//                ->join('atividade_fisicas', 'atividade_fisicas .id', '=', 'users.tipoUtilizador')
-//                ->join('tipo_utilizador', 'tipo_utilizador.id', '=', 'users.tipoUtilizador')
-//                ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
-//                ->where('ingredientes.id', '=', $id)
-//                ->get();
 
-        return view('posts.utilizadores.show')->withUtilizador($utilizador);
+        $utilizador=DB::table('users')
+            ->join('faixa_etarias', 'faixa_etarias.id', '=', 'users.faixaEtaria')
+            ->join('tipo_utilizadors', 'tipo_utilizadors.id', '=', 'users.tipoUtilizador')
+             ->join('atividade_fisicas', 'atividade_fisicas.id', '=', 'users.atividadeFisica')
+            ->join('estado_contas', 'estado_contas.id', '=', 'users.estadoConta')
+            ->join('sexos', 'sexos.id', '=', 'users.sexo')
+            ->select('users.id','users.name', 'users.email','users.email','tipo_utilizadors.tipoUtilizador','estado_contas.estadoConta','sexos.sexo','faixa_etarias.faixaEtaria','atividade_fisicas.nivelAtividade')
+            ->where('users.id', '=', $id)
+            ->get();
+
+        return view('posts.utilizadores.show')->with('utilizador', $utilizador);
+
     }
 
     /**
