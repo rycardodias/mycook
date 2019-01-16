@@ -67,7 +67,7 @@
 @endif
 
 <!--               RECEITAS                -->
-@if(Request::url() === $variavel . '/receitas' || Request::url() === $variavel . '/ingredientes'|| Request::url() === $variavel . '/myaccount/1')
+@if(Request::url() === $variavel . '/receitas' || Request::url() === $variavel . '/ingredientes'|| Request::url() === $variavel . '/myaccount/'.  Auth::user()->id )
 <div class="nav">
     <a  href="/" id="titulo">MyCook - Make life delicious</a>
     <div class="menu">

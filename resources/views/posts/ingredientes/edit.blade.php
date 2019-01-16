@@ -1,3 +1,4 @@
+@if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $receita->idUtilizador )
 <link rel="stylesheet" href="../css/menu.css">
 
 <div class="nav">
@@ -14,10 +15,15 @@
         <p>{{Form::label('descricao', 'Descricao')}}
         <p>{{Form::text('descricao', $ingrediente->descricao, [ 'class' => 'form-control', 'placeholder' => 'Descricao'])}}
     </div>
-    <div class="form-group">
-        <p>{{Form::label('idUtilizador', 'idUtilizador')}}
-        <p>{{Form::text('idUtilizador', $ingrediente->idUtilizador, ['class' => 'form-control', 'placeholder' => 'idUtilizador'])}}
-    </div>
+    <label for="utilizador">Insere o Utilizador:</label><br>
+    <p><select class="textWidth form-control" name="utilizador" id="utilizador" type="text">
+            <option disabled selected> > Selecione o User</option>
+            @foreach($listausers as $listaus)
+                <option value="{{$listaus->id}}">
+                    {{$listaus->name}}
+                </option>
+            @endforeach
+        </select>
 
     <label for="alimento">Origem Do Alimento:</label><br>
     <p><select class="textWidth form-control" name="alimento" id="alimento" type="text">
@@ -43,3 +49,6 @@
         <footer id="rodape">
             @include('includes.footer')
         </footer>
+    @else
+        <p>Sabes bem que não devias estar Aqui !</p>
+    @endif

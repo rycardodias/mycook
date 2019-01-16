@@ -116,6 +116,6 @@ class MensagensController extends Controller
     {
         $mensagem = Mensagens::find($id);
         $mensagem->delete();
-        return redirect('/mensagens')->with('sucess', 'Mensagem Eliminada');
+        return redirect('/gerirtickets')->with('sucess', 'Mensagem Eliminada');
     }
 }

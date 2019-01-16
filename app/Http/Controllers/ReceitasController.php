@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\receita;
+use App\user;
 use App\tipoConsumidor;
 use DB;
 
@@ -107,8 +108,17 @@ class ReceitasController extends Controller
      */
     public function edit($id)
     {
-        $receita = receita::find($id);
-        return view('posts.receitas.edit')->with('receita', $receita);
+//
+        $listausers = user::all();
+
+        $receitas=
+            DB::table('receitas')
+                ->join('users', 'receitas.idUtilizador', '=', 'users.id')
+                ->select('receitas.id', 'receitas.nome','receitas.resumo','receitas.detalhes','receitas.nPassos','receitas.nPessoas','users.name','receitas.created_at','receitas.updated_at')
+                ->where('receitas.id', '=', $id)
+                ->get();
+
+        return view('posts.receitas.edit')->with(['receitas' => $receitas,'listausers' => $listausers]);
     }
 
     /**

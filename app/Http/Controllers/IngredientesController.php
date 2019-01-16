@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\origemAlimento;
 use App\origemTipo;
+use App\user;
 use Illuminate\Http\Request;
 use App\ingrediente;
 use DB;
@@ -100,7 +101,8 @@ class IngredientesController extends Controller
         $ingrediente=
             DB::table('ingredientes')
                 ->join('origem_alimentos', 'ingredientes.idOrigem', '=', 'origem_alimentos.id')
-                ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
+                ->join('users', 'users.id', '=', 'ingredientes.idUtilizador')
+                ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','users.name','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
                 ->where('ingredientes.id', '=', $id)
                 ->get();
 
@@ -116,16 +118,18 @@ class IngredientesController extends Controller
     public function edit($id)
     {
         $listatipos = origemAlimento::all();
+        $listausers = user::all();
 
 
         $ingrediente=
             DB::table('ingredientes')
                 ->join('origem_alimentos', 'ingredientes.id', '=', 'origem_alimentos.id')
-                ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','ingredientes.idUtilizador','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
+                ->join('users', 'users.id', '=', 'ingredientes.idUtilizador')
+                ->select('ingredientes.id', 'ingredientes.nome','ingredientes.descricao','users.name','origem_alimentos.origemAlimento','ingredientes.created_at','ingredientes.updated_at')
                 ->where('ingredientes.id', '=', $id)
                 ->get();
 
-        return view('posts.ingredientes.edit')->with(['ingrediente' => $ingrediente,'listatipos' => $listatipos ]);
+        return view('posts.ingredientes.edit')->with(['ingrediente' => $ingrediente,'listatipos' => $listatipos,'listausers' => $listausers]);
 
 
 
@@ -142,8 +146,7 @@ class IngredientesController extends Controller
     {
         $this->validate($request, [
             'nome' => 'required',
-            'descricao' => 'required',
-            'idUtilizador' => 'required'
+            'descricao' => 'required'
 
         ]);
         
@@ -151,7 +154,7 @@ class IngredientesController extends Controller
         $ingrediente = Ingrediente::find($id);
         $ingrediente->nome = $request->input('nome');
         $ingrediente->descricao = $request->input('descricao');
-        $ingrediente->idUtilizador = $request->input('idUtilizador');
+        $ingrediente->idUtilizador = $request->input('utilizador');
         $ingrediente ->idOrigem = $request->input('alimento');
         $ingrediente->save();
 

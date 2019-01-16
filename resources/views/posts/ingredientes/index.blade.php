@@ -8,10 +8,11 @@
         <div class="filtroORigemAlimento">
                 <h3>Origem Alimentos</h3>
                 <div class="opcao">
+
             @foreach($lista as $lista)
                 <p><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a>
             @endforeach
-                    <p><a href="/ingredientes/create">Criar Receita</a>
+                <p><a href="/ingredientes/create">Criar Receita</a>
         </div>
     </div>
     </div>
@@ -23,14 +24,15 @@
                     <th>Ingrediente</th>
                     <th>Descrição</th>
                     <th>Origem</th>
-                    <th>Ver mais</th>
                 </tr>
             @foreach($ingredientes as $ingrediente)
                 <tr id="lista">
                     <td>{{$ingrediente->nome}}</td>
                     <td>{{$ingrediente->descricao}}</td>
                     <td>{{$ingrediente->origemAlimento}}</td>
+                    @if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $ingrediente->idUtilizador )
                     <td><a href="/ingredientes/{{$ingrediente->id}}">Ver mais</a></td>
+                    @endif
                 </tr>
             @endforeach
             </table>

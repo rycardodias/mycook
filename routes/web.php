@@ -24,6 +24,7 @@ Route::get('/contactos', function () {
     return view('contactos');
 });
 
+
 Route::get('/CreateAccount', function () {
     return view('createAccount');
 });
@@ -39,8 +40,12 @@ Route::get('/origem/{tipoID}',
     ]);
 
 Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('mensagens', 'MensagensController')->middleware('auth');
+
+Route::resource('gerirtickets', 'MensagensController')->middleware('auth');
+
+Route::resource('gerirusers', 'UtilizadoresController')->middleware('auth');
 
 Route::resource('receitas', 'ReceitasController')->middleware('auth');
 

@@ -16,7 +16,7 @@ class UtilizadoresController extends Controller
     public function index()
     {
         $utilizador = user::all();
-        return view('myaccount')->withUtilizador($utilizador);
+        return view('posts.utilizadores.index')->withUtilizador($utilizador);
 
     }
 
@@ -134,6 +134,6 @@ class UtilizadoresController extends Controller
     {
         $utilizador = user::find($id);
         $utilizador->delete();
-        return redirect('/')->with('sucess', 'Utilizador Eliminado!');
+        return redirect('/gerirusers')->with('sucess', 'Utilizador Eliminado!');
     }
 }

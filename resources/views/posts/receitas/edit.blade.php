@@ -1,10 +1,11 @@
+@if (Auth::user()->tipoUtilizador=='3' OR Auth::user()->id == $receita->idUtilizador )
 <link rel="stylesheet" href="../css/menu.css">
 
 <div class="nav">
         @include('includes.navbar')
 </div>
 <section class="corpo" id="receitasEdit">
-
+    @foreach ($receitas as $receita)
 <h1>Editar Receita</h1>
 {!! Form::open(['action' => ['ReceitasController@update', $receita->id], 'method' => 'POST']) !!}
     <div class="form-group">
@@ -27,10 +28,16 @@
         <p>{{Form::label('nPessoas', 'nPessoas')}}
         <p>{{Form::text('nPessoas', $receita->nPessoas, ['class' => 'form-control', 'placeholder' => 'nPessoas'])}}
     </div>
-    <div class="form-group">
-        <p>{{Form::label('idUtilizador', 'idUtilizador')}}
-        <p>{{Form::text('idUtilizador', $receita->idUtilizador, ['class' => 'form-control', 'placeholder' => 'idUtilizador'])}}
-    </div>
+
+    <label for="utilizadores">Utilizadores:</label><br>
+    <p><select class="textWidth form-control" name="utilizadores" id="utilizadores" type="text">
+            <option disabled selected> > Selecione o utilizador:</option>
+            @foreach($listausers as $lista)
+                <option value="{{$lista->id}}">
+                    {{$lista->name}}
+                </option>
+            @endforeach
+        </select>
 
     {{Form::hidden('_method', 'PUT')}}
     {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
@@ -41,7 +48,11 @@
     {{Form::hidden('_method', 'DELETE')}}
     {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
 {!!Form::close()!!}
-</section>  
+</section>
+@endforeach
 <footer id="rodape">
     @include('includes.footer')
-</footer>    
+</footer>
+@else
+    <p>Sabes bem que não devias estar Aqui !</p>
+@endif
