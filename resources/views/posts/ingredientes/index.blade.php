@@ -6,14 +6,13 @@
 <section class="corpo" id="ingredientesIndex">
     <div class="esquerda">
         <div class="filtroORigemAlimento">
-                <h3>Origem Alimentos</h3>
-                <div class="opcao">
-
+            <h3>Origem Alimentos</h3>
+            <div class="opcao">
             @foreach($lista as $lista)
                 <p><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a>
             @endforeach
+            </div>
         </div>
-    </div>
     </div>
     <div class="direita">
         <h1>Lista de Ingredientes</h1>

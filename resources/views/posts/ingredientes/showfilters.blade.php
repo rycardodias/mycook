@@ -4,37 +4,38 @@
 <div class="nav">
     @include('includes.navbar')
 </div>
-
-<div class="widget">
-    <div class="widget-heading">
-        <h4>Filtros Ingredientes</h4>
+<section class="corpo" id="showfilters">
+    <div class="esquerda">
+        <div class="filtroORigemAlimento">
+            <h3>Origem Ingredientes</h3>
+            <div class="opcao">
+            @foreach($listaorigem as $lista)
+                <h3><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a></h3>
+            @endforeach
+            </div>
+        </div>
     </div>
-    <div class="widget-body">
-        <ul class="categories">
-@foreach($listaorigem as $lista)
-    <li>
-        <h3><a href="/origem/{{$lista->id}}">{{$lista->origemAlimento}}</a></h3>
-    </li>
-@endforeach
-</ul>
-    </div>
-    </div>
-
-<section class="corpo" id="receitasShow">
-    @if(!empty($origem))
-    @foreach ($origem as $origem)
-
-        <h5> Filtro {{$origem->origemAlimento}}</h5>
-            <h3><a href="/ingredientes/{{$origem->id}}">{{$origem->nome}}</a></h3>
-        <p>{{$origem->created_at}}
-    @endforeach
-
+    <div class="direita">
+    <h1>Lista de Ingredientes</h1>
+        <p><a href="/ingredientes/create">Criar Ingrediente</a>
+        <table>
+            <tr>
+                <th>Ingrediente</th>
+                <th>Descrição</th>
+                <th>Origem</th>
+            </tr>
+            @if(!empty($origem))
+            @foreach ($origem as $origem)
+                <tr id="lista">
+                    <td><a href="/ingredientes/{{$origem->id}}">{{$origem->nome}}</a></td>
+                </tr>
+        @endforeach
+        </table>
         @else
             <p>Sem receitas encontradas</p>
         @endif
 
-        <a href="/receitas/create">Criar Receita</a>
-
+    </div>
 </section>
 <footer id="rodape">
     @include('includes.footer')
