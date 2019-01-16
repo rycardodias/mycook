@@ -59,10 +59,10 @@ class ingredientes_receitasController extends Controller
         $ingrediente_receitas->quantidade = $request->input('quantidade');
         $ingrediente_receitas->save();
 
+//session para dar o valor ao redirect
+        $value = Session::get('receitaID');
 
-
-
-        return redirect('/receitas')->with('success', 'Ingrediente atualizado');
+        return redirect('/receitas/'.$value)->with('success', 'Ingrediente atualizado');
     }
 
     /**
