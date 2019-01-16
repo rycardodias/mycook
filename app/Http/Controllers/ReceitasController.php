@@ -143,7 +143,7 @@ class ReceitasController extends Controller
         $receita->resumo = $request->input('resumo');
         $receita->nPassos = $request->input('nPassos');
         $receita->nPessoas = $request->input('nPessoas');
-        $receita->idUtilizador = $request->input('idUtilizador');
+        $receita->idUtilizador = $request->input('utilizadores');
         $receita->save();
 
         return redirect('receitas')->with('success', 'receita atualizado');
